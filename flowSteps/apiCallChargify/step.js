@@ -14,7 +14,7 @@
  * {number} connectionTimeout, Read timeout interval, in milliseconds.
  * {number} readTimeout, Connect timeout interval, in milliseconds.
  */
-step.apiCall = function (inputs) {
+step.apiCallChargify = function (inputs) {
 
 	var inputsLogic = {
 		headers: inputs.headers || [],

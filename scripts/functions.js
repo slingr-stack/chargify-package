@@ -3088,7 +3088,7 @@ var parse = function (str) {
  Constants
  ****************************************************/
 
-var API_URL = "https://subdomain.chargify.com"; // TODO: Set the base url for the api
+var API_URL = "https://"+config.get("subdomain")+".chargify.com"; // TODO: Set the base url for the api
 
 /****************************************************
  Configurator

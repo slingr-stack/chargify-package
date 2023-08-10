@@ -41,6 +41,8 @@ step.apiCallChargify = function (inputs) {
 		readTimeout: inputsLogic.readTimeout
 	}
 
+	setAuthorization(options);
+
 	switch (inputsLogic.method.toLowerCase()) {
 		case 'get':
 			return httpService.get(options);
@@ -104,3 +106,28 @@ var stringToObject = function (obj) {
 	}
 	return null;
 };
+
+function setAuthorization(options) {
+	var authorization = options.authorization || {};
+	sys.logs.debug('[sharepoint] setting authorization');
+
+	authorization = mergeJSON(authorization, {
+		type: "basic",
+		username: config.get("apiKey"),
+		password: "x"
+	});
+	options.authorization = authorization;
+	return options;
+}
+
+function mergeJSON (json1, json2) {
+	const result = {};
+	var key;
+	for (key in json1) {
+		if(json1.hasOwnProperty(key)) result[key] = json1[key];
+	}
+	for (key in json2) {
+		if(json2.hasOwnProperty(key)) result[key] = json2[key];
+	}
+	return result;
+}

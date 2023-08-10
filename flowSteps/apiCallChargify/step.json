@@ -1,0 +1,871 @@
+{
+  "label": "API call to chargify",
+  "name": "apiCallChargify",
+  "category": "integrations",
+  "description": "This flow step will send generic request to chargify",
+  "inputs": [
+    {
+      "label": "Url",
+      "name": "url",
+      "description": "The method and path to which this endpoint is to send requests in a generic way.",
+      "type": "urlParams",
+      "required": "true",
+      "options": {
+        "type": "dropDown",
+        "possibleValues": [
+            {
+              "label": "GET /api_exports/proforma_invoices/{batch_id}/rows.json"
+            },
+            {
+              "label": "GET /api_exports/invoices/{batch_id}/rows.json"
+            },
+            {
+              "label": "GET /api_exports/subscriptions/{batch_id}/rows.json"
+            },
+            {
+              "label": "GET /api_exports/proforma_invoices/{batch_id.json}"
+            },
+            {
+              "label": "GET /api_exports/invoices/{batch_id.json}"
+            },
+            {
+              "label": "GET /api_exports/subscriptions/{batch_id.json}"
+            },
+            {
+              "label": "GET /subscriptions/{subscription_id}/advance_invoice.json"
+            },
+            {
+              "label": "GET /portal/customers/{customer_id}/management_link.json"
+            },
+            {
+              "label": "GET /product_families/{product_family_id}/coupons.json"
+            },
+            {
+              "label": "GET /coupons/find.json"
+            },
+            {
+              "label": "GET /product_families/{product_family_id}/coupons/{coupon_id.json}"
+            },
+            {
+              "label": "GET /coupons.json"
+            },
+            {
+              "label": "GET /product_families/{product_family_id}/coupons/{coupon_id}/usage.json"
+            },
+            {
+              "label": "GET /coupons/validate.json"
+            },
+            {
+              "label": "GET /coupons/{coupon_id}/codes.json"
+            },
+            {
+              "label": "GET /components/lookup.json"
+            },
+            {
+              "label": "GET /product_families/{product_family_id}/components/{component_id.json}"
+            },
+            {
+              "label": "GET /components.json"
+            },
+            {
+              "label": "GET /product_families/{product_family_id}/components.json"
+            },
+            {
+              "label": "GET /components/{component_id}/price_points.json"
+            },
+            {
+              "label": "GET /components_price_points.json"
+            },
+            {
+              "label": "GET /customers.json"
+            },
+            {
+              "label": "GET /customers/{id.json}"
+            },
+            {
+              "label": "GET /customers/lookup.json"
+            },
+            {
+              "label": "GET /customers/{customer_id}/subscriptions.json"
+            },
+            {
+              "label": "GET /{resource_type}/metafields.json"
+            },
+            {
+              "label": "GET /{resource_type}/{resource_id}/metadata.json"
+            },
+            {
+              "label": "GET /{resource_type}/metadata.json"
+            },
+            {
+              "label": "GET /events.json"
+            },
+            {
+              "label": "GET /subscriptions/{subscription_id}/events.json"
+            },
+            {
+              "label": "GET /events/count.json"
+            },
+            {
+              "label": "GET /components/{component_id}/price_points/{price_point_id}/segments.json"
+            },
+            {
+              "label": "GET /stats.json"
+            },
+            {
+              "label": "GET /mrr.json"
+            },
+            {
+              "label": "GET /mrr_movements.json"
+            },
+            {
+              "label": "GET /subscriptions_mrr.json"
+            },
+            {
+              "label": "GET /invoices.json"
+            },
+            {
+              "label": "GET /invoices.json"
+            },
+            {
+              "label": "GET /invoices/{uid.json}"
+            },
+            {
+              "label": "GET /invoices/{invoice_id.json}"
+            },
+            {
+              "label": "GET /invoices/events.json"
+            },
+            {
+              "label": "GET /credit_notes.json"
+            },
+            {
+              "label": "GET /credit_notes/{uid.json}"
+            },
+            {
+              "label": "GET /invoices/{invoice_uid}/segments.json"
+            },
+            {
+              "label": "GET /offers.json"
+            },
+            {
+              "label": "GET /offers/{offer_id.json}"
+            },
+            {
+              "label": "GET /payment_profiles.json"
+            },
+            {
+              "label": "GET /payment_profiles/{payment_profile_id.json}"
+            },
+            {
+              "label": "GET /one_time_tokens/{chargify_token.json}"
+            },
+            {
+              "label": "GET /product_families/{product_family_id}/products.json"
+            },
+            {
+              "label": "GET /product_families.json"
+            },
+            {
+              "label": "GET /product_families/{id.json}"
+            },
+            {
+              "label": "GET /products/{product_id.json}"
+            },
+            {
+              "label": "GET /products/handle/{api_handle.json}"
+            },
+            {
+              "label": "GET /products.json"
+            },
+            {
+              "label": "GET /products/{product_id}/price_points.json"
+            },
+            {
+              "label": "GET /products/{product_id}/price_points/{price_point_id.json}"
+            },
+            {
+              "label": "GET /products_price_points.json"
+            },
+            {
+              "label": "GET /subscription_groups/{subscription_group_uid}/proforma_invoices.json"
+            },
+            {
+              "label": "GET /proforma_invoices/{proforma_invoice_uid.json}"
+            },
+            {
+              "label": "GET /subscriptions/{subscription_id}/proforma_invoices.json"
+            },
+            {
+              "label": "GET /reason_codes.json"
+            },
+            {
+              "label": "GET /reason_codes/{reason_code_id.json}"
+            },
+            {
+              "label": "GET /referral_codes/validate.json"
+            },
+            {
+              "label": "GET /sellers/{seller_id}/sales_commission_settings.json"
+            },
+            {
+              "label": "GET /sellers/{seller_id}/sales_reps.json"
+            },
+            {
+              "label": "GET /sellers/{seller_id}/sales_reps/{sales_rep_id.json}"
+            },
+            {
+              "label": "GET /site.json"
+            },
+            {
+              "label": "GET /chargify_js_keys.json"
+            },
+            {
+              "label": "GET /subscriptions.json"
+            },
+            {
+              "label": "GET /subscriptions/{subscription_id.json}"
+            },
+            {
+              "label": "GET /subscriptions/lookup.json"
+            },
+            {
+              "label": "GET /subscriptions/{subscription_id}/components/{component_id.json}"
+            },
+            {
+              "label": "GET /subscriptions/{subscription_id}/components.json"
+            },
+            {
+              "label": "GET /subscriptions/{subscription_id}/components/{component_id}/allocations.json"
+            },
+            {
+              "label": "GET /subscriptions/{subscription_id}/components/{component_id}/usages.json"
+            },
+            {
+              "label": "GET /subscriptions_components.json"
+            },
+            {
+              "label": "GET /subscription_groups.json"
+            },
+            {
+              "label": "GET /subscription_groups/{uid.json}"
+            },
+            {
+              "label": "GET /subscription_groups/lookup.json"
+            },
+            {
+              "label": "GET /subscriptions/{subscription_id}/account_balances.json"
+            },
+            {
+              "label": "GET /subscriptions/{subscription_id}/prepayments.json"
+            },
+            {
+              "label": "GET /subscriptions/{subscription_id}/notes.json"
+            },
+            {
+              "label": "GET /subscriptions/{subscription_id}/notes/{note_id.json}"
+            },
+            {
+              "label": "GET /webhooks.json"
+            },
+            {
+              "label": "GET /endpoints.json"
+            },
+            {
+              "label": "GET /statements/{statement_id.json}"
+            },
+            {
+              "label": "GET /statements.json"
+            },
+            {
+              "label": "GET /subscriptions/{subscription_id}/statements.json"
+            },
+            {
+              "label": "GET /statements/ids.json"
+            },
+            {
+              "label": "GET /subscriptions/{subscription_id}/statements/ids.json"
+            },
+            {
+              "label": "GET /statements/count.json"
+            },
+            {
+              "label": "GET /transactions/{transaction_id.json}"
+            },
+            {
+              "label": "GET /transactions.json"
+            },
+            {
+              "label": "GET /subscriptions/{subscription_id}/transactions.json"
+            },
+            {
+              "label": "GET /transactions/count.json"
+            },
+            {
+              "label": "POST /api_exports/proforma_invoices.json"
+            },
+            {
+              "label": "POST /api_exports/invoices.json"
+            },
+            {
+              "label": "POST /api_exports/subscriptions.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/advance_invoice/issue.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/advance_invoice/void.json"
+            },
+            {
+              "label": "POST /portal/customers/{customer_id}/enable.json"
+            },
+            {
+              "label": "POST /portal/customers/{customer_id}/invitations/invite.json"
+            },
+            {
+              "label": "POST /product_families/{product_family_id}/coupons.json"
+            },
+            {
+              "label": "POST /coupons/{coupon_id}/codes.json"
+            },
+            {
+              "label": "POST /product_families/{product_family_id}/{plural_kind.json}"
+            },
+            {
+              "label": "POST /components/{component_id}/price_points.json"
+            },
+            {
+              "label": "POST /components/{component_id}/price_points/bulk.json"
+            },
+            {
+              "label": "POST /price_points/{price_point_id}/currency_prices.json"
+            },
+            {
+              "label": "POST /customers.json"
+            },
+            {
+              "label": "POST /{resource_type}/metafields.json"
+            },
+            {
+              "label": "POST /{resource_type}/{resource_id}/metadata.json"
+            },
+            {
+              "label": "POST /components/{component_id}/price_points/{price_point_id}/segments.json"
+            },
+            {
+              "label": "POST /components/{component_id}/price_points/{price_point_id}/segments/bulk.json"
+            },
+            {
+              "label": "POST /invoices/{uid}/refunds.json"
+            },
+            {
+              "label": "POST /invoices/{uid}/payments.json"
+            },
+            {
+              "label": "POST /invoices/payments.json"
+            },
+            {
+              "label": "POST /invoices/{invoice_id}/payments.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/payments.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/payments.json"
+            },
+            {
+              "label": "POST /invoices/{uid}/reopen.json"
+            },
+            {
+              "label": "POST /invoices/{uid}/void.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/invoices.json"
+            },
+            {
+              "label": "POST /invoices/{uid}/deliveries.json"
+            },
+            {
+              "label": "POST /invoices/{uid}/customer_information/preview.json"
+            },
+            {
+              "label": "POST /invoices/{uid}/issue.json"
+            },
+            {
+              "label": "POST /offers.json"
+            },
+            {
+              "label": "POST /payment_profiles.json"
+            },
+            {
+              "label": "POST /subscriptions/{id}/payment_profiles/{payment_profile_id}/change_payment_profile.json"
+            },
+            {
+              "label": "POST /subscription_groups/{uid}/payment_profiles/{payment_profile_id}/change_payment_profile.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/request_payment_profiles_update.json"
+            },
+            {
+              "label": "POST /product_families.json"
+            },
+            {
+              "label": "POST /product_families/{product_family_id}/products.json"
+            },
+            {
+              "label": "POST /products/{product_id}/price_points.json"
+            },
+            {
+              "label": "POST /products/{product_id}/price_points/bulk.json"
+            },
+            {
+              "label": "POST /product_price_points/{product_price_point_id}/currency_prices.json"
+            },
+            {
+              "label": "POST /subscription_groups/{subscription_group_uid}/proforma_invoices.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/proforma_invoices.json"
+            },
+            {
+              "label": "POST /subscriptions/proforma_invoices.json"
+            },
+            {
+              "label": "POST /proforma_invoices/{proforma_invoice_uid}/void.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/proforma_invoices/preview.json"
+            },
+            {
+              "label": "POST /subscriptions/proforma_invoices/preview.json"
+            },
+            {
+              "label": "POST /reason_codes.json"
+            },
+            {
+              "label": "POST /sites/clear_data.json"
+            },
+            {
+              "label": "POST /subscriptions.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/purge.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/prepaid_configurations.json"
+            },
+            {
+              "label": "POST /subscriptions/preview.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/add_coupon.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/price_points.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/price_points/reset.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/components/{component_id}/allocations.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/allocations.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/allocations/preview.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/components/{component_id}/usages.json"
+            },
+            {
+              "label": "POST /event_based_billing/subscriptions/{subscription_id}/components/{component_id}/activate.json"
+            },
+            {
+              "label": "POST /event_based_billing/subscriptions/{subscription_id}/components/{component_id}/deactivate.json"
+            },
+            {
+              "label": "POST /{subdomain}/events/{api_handle.json}"
+            },
+            {
+              "label": "POST /{subdomain}/events/{api_handle}/bulk.json"
+            },
+            {
+              "label": "POST /subscription_groups/signup.json"
+            },
+            {
+              "label": "POST /subscription_groups.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/group.json"
+            },
+            {
+              "label": "POST /subscription_groups/{uid}/prepayments.json"
+            },
+            {
+              "label": "POST /subscription_groups/{uid}/service_credits.json"
+            },
+            {
+              "label": "POST /subscription_groups/{uid}/service_credit_deductions.json"
+            },
+            {
+              "label": "POST /subscription_groups/{uid}/cancel.json"
+            },
+            {
+              "label": "POST /subscription_groups/{uid}/delayed_cancel.json"
+            },
+            {
+              "label": "POST /subscription_groups/{subscription_group_uid}/reactivate.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/prepayments.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/service_credits.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/service_credit_deductions.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/prepayments/{prepayment_id}/refunds.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/notes.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/migrations.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/migrations/preview.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/resume.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/hold.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/delayed_cancel.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/cancel_dunning.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/renewals/preview.json"
+            },
+            {
+              "label": "POST /webhooks/replay.json"
+            },
+            {
+              "label": "POST /endpoints.json"
+            },
+            {
+              "label": "POST /invoices/{invoice_id}/charges.json"
+            },
+            {
+              "label": "POST /invoices/{invoice_id}/adjustments.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/adjustments.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/charges.json"
+            },
+            {
+              "label": "POST /subscriptions/{subscription_id}/refunds.json"
+            },
+            {
+              "label": "DELETE /portal/customers/{customer_id}/invitations/revoke.json"
+            },
+            {
+              "label": "DELETE /product_families/{product_family_id}/coupons/{coupon_id.json}"
+            },
+            {
+              "label": "DELETE /coupons/{coupon_id}/codes/{subcode.json}"
+            },
+            {
+              "label": "DELETE /product_families/{product_family_id}/components/{component_id.json}"
+            },
+            {
+              "label": "DELETE /components/{component_id}/price_points/{price_point_id.json}"
+            },
+            {
+              "label": "DELETE /customers/{id.json}"
+            },
+            {
+              "label": "DELETE /{resource_type}/metafields.json"
+            },
+            {
+              "label": "DELETE /{resource_type}/{resource_id}/metadata.json"
+            },
+            {
+              "label": "DELETE /components/{component_id}/price_points/{price_point_id}/segments/{id.json}"
+            },
+            {
+              "label": "DELETE /payment_profiles/{payment_profile_id.json}"
+            },
+            {
+              "label": "DELETE /subscriptions/{subscription_id}/payment_profiles/{payment_profile_id.json}"
+            },
+            {
+              "label": "DELETE /subscription_groups/{subscription_group_uid}/payment_profiles/{payment_profile_id.json}"
+            },
+            {
+              "label": "DELETE /products/{product_id.json}"
+            },
+            {
+              "label": "DELETE /products/{product_id}/price_points/{price_point_id.json}"
+            },
+            {
+              "label": "DELETE /reason_codes/{reason_code_id.json}"
+            },
+            {
+              "label": "DELETE /subscriptions/{subscription_id}/remove_coupon.json"
+            },
+            {
+              "label": "DELETE /subscriptions/{subscription_id}/components/{component_id}/allocations/{allocation_id.json}"
+            },
+            {
+              "label": "DELETE /subscription_groups/{uid.json}"
+            },
+            {
+              "label": "DELETE /subscriptions/{subscription_id}/group.json"
+            },
+            {
+              "label": "DELETE /subscription_groups/{uid}/delayed_cancel.json"
+            },
+            {
+              "label": "DELETE /subscriptions/{subscription_id}/notes.json"
+            },
+            {
+              "label": "DELETE /subscriptions/{subscription_id.json}"
+            },
+            {
+              "label": "DELETE /subscriptions/{subscription_id}/delayed_cancel.json"
+            },
+            {
+              "label": "PUT /product_families/{product_family_id}/coupons/{coupon_id.json}"
+            },
+            {
+              "label": "PUT /coupon/{coupon_id}/currency_prices.json"
+            },
+            {
+              "label": "PUT /coupons/{coupon_id}/codes.json"
+            },
+            {
+              "label": "PUT /components/{component_id}/price_points/{price_point_id}/default.json"
+            },
+            {
+              "label": "PUT /components/{component_id}/price_points/{price_point_id.json}"
+            },
+            {
+              "label": "PUT /components/{component_id}/price_points/{price_point_id}/unarchive.json"
+            },
+            {
+              "label": "PUT /price_points/{price_point_id}/currency_prices.json"
+            },
+            {
+              "label": "PUT /customers/{id.json}"
+            },
+            {
+              "label": "PUT /{resource_type}/metafields.json"
+            },
+            {
+              "label": "PUT /{resource_type}/{resource_id}/metadata.json"
+            },
+            {
+              "label": "PUT /components/{component_id}/price_points/{price_point_id}/segments/{id.json}"
+            },
+            {
+              "label": "PUT /components/{component_id}/price_points/{price_point_id}/segments/bulk.json"
+            },
+            {
+              "label": "PUT /invoices/{uid}/customer_information.json"
+            },
+            {
+              "label": "PUT /offers/{offer_id}/archive.json"
+            },
+            {
+              "label": "PUT /offers/{offer_id}/unarchive.json"
+            },
+            {
+              "label": "PUT /payment_profiles/{payment_profile_id.json}"
+            },
+            {
+              "label": "PUT /bank_accounts/{bank_account_id}/verification.json"
+            },
+            {
+              "label": "PUT /products/{product_id.json}"
+            },
+            {
+              "label": "PUT /products/{product_id}/price_points/{price_point_id.json}"
+            },
+            {
+              "label": "PUT /product_price_points/{product_price_point_id}/currency_prices.json"
+            },
+            {
+              "label": "PUT /reason_codes/{reason_code_id.json}"
+            },
+            {
+              "label": "PUT /subscriptions/{subscription_id.json}"
+            },
+            {
+              "label": "PUT /subscriptions/{subscription_id}/override.json"
+            },
+            {
+              "label": "PUT /subscriptions/{subscription_id}/activate.json"
+            },
+            {
+              "label": "PUT /subscriptions/{subscription_id}/components/{component_id}/allocations/{allocation_id.json}"
+            },
+            {
+              "label": "PUT /subscription_groups/{uid.json}"
+            },
+            {
+              "label": "PUT /subscriptions/{subscription_id}/notes/{note_id.json}"
+            },
+            {
+              "label": "PUT /subscriptions/{subscription_id}/retry.json"
+            },
+            {
+              "label": "PUT /subscriptions/{subscription_id}/hold.json"
+            },
+            {
+              "label": "PUT /subscriptions/{subscription_id}/reactivate.json"
+            },
+            {
+              "label": "PUT /webhooks/settings.json"
+            },
+            {
+              "label": "PUT /endpoints/{endpoint_id.json}"
+            },
+            {
+              "label": "PUT /subscriptions/{subscription_id}/reset_balance.json"
+            },
+            {
+              "label": "PATCH /products/{product_id}/price_points/{price_point_id}/unarchive.json"
+            },
+            {
+              "label": "PATCH /products/{product_id}/price_points/{price_point_id}/default.json"
+            }
+        ]
+      }
+    },
+    {
+      "label": "Headers",
+      "name": "headers",
+      "description": "Let the client and the server pass additional information with the HTTP request in a key value format. (e.g. key=ABC123)",
+      "type": "keyValue"
+    },
+    {
+      "label": "Query Params",
+      "name": "params",
+      "description": "Parameters attached to the end of a url in a key value format. (e.g. key=ABC123)",
+      "type": "keyValue"
+    },
+    {
+      "label": "Body",
+      "name": "body",
+      "type": "json",
+      "description": "Content to be sent to the server.",
+      "options": {
+        "allowContextSelector": "true"
+      }
+    },
+    {
+      "label": "Override Settings",
+      "name": "overrideSettings",
+      "type": "boolean",
+      "description": "If true, allows adding configurations",
+      "defaultValue": false,
+      "options": {
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "Follow Redirects",
+      "name": "followRedirects",
+      "type": "boolean",
+      "description": "Follow the redirects when a HTTP request is executed",
+      "visibility": "config.overrideSettings",
+      "defaultValue": false,
+      "options": {
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "Download",
+      "name": "download",
+      "type": "boolean",
+      "description": "Indicates that the resource has to be downloaded into a file instead of returning it in the response.",
+      "visibility": "config.overrideSettings && config.events != \"fileDownloaded\"",
+      "defaultValue": false,
+      "options": {
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "File Name",
+      "name": "fileName",
+      "description": "If provided, the file will be stored with this name. If empty the file name will be calculated from the URL.",
+      "visibility": "(config.overrideSettings && config.download) || config.events === \"fileDownloaded\"",
+      "type": "text",
+      "options": {
+        "allowContextSelector": "true"
+      }
+    },
+    {
+      "label": "Full Response",
+      "name": "fullResponse",
+      "type": "boolean",
+      "description": "Include extended information about response",
+      "visibility": "config.overrideSettings",
+      "defaultValue": false,
+      "options": {
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "Connection timeout",
+      "name": "connectionTimeout",
+      "description": "Connect timeout interval, in milliseconds (0 = infinity). Default value: 5000 ms (5 sec)",
+      "visibility": "config.overrideSettings",
+      "type": "text",
+      "defaultValue": "5000",
+      "typeOptions": {
+        "validation": {
+          "function": "!config.connectionTimeout || utils.isPlaceholder(config.connectionTimeout) || utils.getInteger(config.connectionTimeout) >= 0",
+          "message": "The time must be a valid placeholder or a positive integer greater than or equal to 0. "
+        }
+      },
+      "options": {
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "Read timeout",
+      "name": "readTimeout",
+      "description": "Read timeout interval, in milliseconds (0 = infinity). Default value: 60000 ms (60 sec)",
+      "visibility": "config.overrideSettings",
+      "type": "text",
+      "defaultValue": "60000",
+      "typeOptions": {
+        "validation": {
+          "function": "!config.readTimeout || utils.isPlaceholder(config.readTimeout) || utils.getInteger(config.readTimeout) >= 0",
+          "message": "The time must be a valid placeholder or a positive integer greater than or equal to 0. "
+        }
+      },
+      "options": {
+        "allowContextSelector": "false"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "label": "Response",
+      "name": "response",
+      "type": "object",
+      "description": "The response to external URL"
+    }
+  ]
+}

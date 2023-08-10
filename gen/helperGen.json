@@ -1,0 +1,1476 @@
+{
+  "fileName": "functions",
+  "apiDescriptors": [
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/api_exports/proforma_invoices/:batch_id/rows.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/api_exports/invoices/:batch_id/rows.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/api_exports/subscriptions/:batch_id/rows.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/api_exports/proforma_invoices.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/api_exports/invoices.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/api_exports/subscriptions.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/api_exports/proforma_invoices/:batch_id.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/api_exports/invoices/:batch_id.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/api_exports/subscriptions/:batch_id.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/advance_invoice/issue.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/advance_invoice.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/advance_invoice/void.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/portal/customers/:customer_id/enable.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/portal/customers/:customer_id/management_link.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/portal/customers/:customer_id/invitations/invite.json"
+    },
+    {
+      "method": "DELETE",
+      "prefix": "",
+      "suffix": "",
+      "url": "/portal/customers/:customer_id/invitations/revoke.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/product_families/:product_family_id/coupons.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/product_families/:product_family_id/coupons.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/coupons/find.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/product_families/:product_family_id/coupons/:coupon_id.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/product_families/:product_family_id/coupons/:coupon_id.json"
+    },
+    {
+      "method": "DELETE",
+      "prefix": "",
+      "suffix": "",
+      "url": "/product_families/:product_family_id/coupons/:coupon_id.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/coupons.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/product_families/:product_family_id/coupons/:coupon_id/usage.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/coupons/validate.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/coupon/:coupon_id/currency_prices.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/coupons/:coupon_id/codes.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/coupons/:coupon_id/codes.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/coupons/:coupon_id/codes.json"
+    },
+    {
+      "method": "DELETE",
+      "prefix": "",
+      "suffix": "",
+      "url": "/coupons/:coupon_id/codes/:subcode.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/product_families/:product_family_id/:plural_kind.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/components/lookup.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/product_families/:product_family_id/components/:component_id.json"
+    },
+    {
+      "method": "DELETE",
+      "prefix": "",
+      "suffix": "",
+      "url": "/product_families/:product_family_id/components/:component_id.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/components.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/components/:component_id/price_points/:price_point_id/default.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/product_families/:product_family_id/components.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/components/:component_id/price_points.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/components/:component_id/price_points.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/components/:component_id/price_points/bulk.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/components/:component_id/price_points/:price_point_id.json"
+    },
+    {
+      "method": "DELETE",
+      "prefix": "",
+      "suffix": "",
+      "url": "/components/:component_id/price_points/:price_point_id.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/components/:component_id/price_points/:price_point_id/unarchive.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/price_points/:price_point_id/currency_prices.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/price_points/:price_point_id/currency_prices.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/components_price_points.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/customers.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/customers.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/customers/:id.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/customers/:id.json"
+    },
+    {
+      "method": "DELETE",
+      "prefix": "",
+      "suffix": "",
+      "url": "/customers/:id.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/customers/lookup.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/customers/:customer_id/subscriptions.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/:resource_type/metafields.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/:resource_type/metafields.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/:resource_type/metafields.json"
+    },
+    {
+      "method": "DELETE",
+      "prefix": "",
+      "suffix": "",
+      "url": "/:resource_type/metafields.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/:resource_type/:resource_id/metadata.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/:resource_type/:resource_id/metadata.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/:resource_type/:resource_id/metadata.json"
+    },
+    {
+      "method": "DELETE",
+      "prefix": "",
+      "suffix": "",
+      "url": "/:resource_type/:resource_id/metadata.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/:resource_type/metadata.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/events.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/events.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/events/count.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/components/:component_id/price_points/:price_point_id/segments.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/components/:component_id/price_points/:price_point_id/segments.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/components/:component_id/price_points/:price_point_id/segments/:id.json"
+    },
+    {
+      "method": "DELETE",
+      "prefix": "",
+      "suffix": "",
+      "url": "/components/:component_id/price_points/:price_point_id/segments/:id.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/components/:component_id/price_points/:price_point_id/segments/bulk.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/components/:component_id/price_points/:price_point_id/segments/bulk.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/stats.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/mrr.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/mrr_movements.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions_mrr.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/invoices/:uid/refunds.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/invoices.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/invoices/:uid.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/invoices/events.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/invoices/:uid/payments.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/invoices/payments.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/credit_notes.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/credit_notes/:uid.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/payments.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/invoices/:uid/reopen.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/invoices/:uid/void.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/invoices/:invoice_uid/segments.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/invoices.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/invoices/:uid/deliveries.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/invoices/:uid/customer_information/preview.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/invoices/:uid/customer_information.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/invoices/:uid/issue.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/offers.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/offers.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/offers/:offer_id.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/offers/:offer_id/archive.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/offers/:offer_id/unarchive.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/payment_profiles.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/payment_profiles.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/payment_profiles/:payment_profile_id.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/payment_profiles/:payment_profile_id.json"
+    },
+    {
+      "method": "DELETE",
+      "prefix": "",
+      "suffix": "",
+      "url": "/payment_profiles/:payment_profile_id.json"
+    },
+    {
+      "method": "DELETE",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/payment_profiles/:payment_profile_id.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/bank_accounts/:bank_account_id/verification.json"
+    },
+    {
+      "method": "DELETE",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscription_groups/:subscription_group_uid/payment_profiles/:payment_profile_id.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:id/payment_profiles/:payment_profile_id/change_payment_profile.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscription_groups/:uid/payment_profiles/:payment_profile_id/change_payment_profile.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/one_time_tokens/:chargify_token.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/request_payment_profiles_update.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/product_families/:product_family_id/products.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/product_families.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/product_families.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/product_families/:id.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/product_families/:product_family_id/products.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/products/:product_id.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/products/:product_id.json"
+    },
+    {
+      "method": "DELETE",
+      "prefix": "",
+      "suffix": "",
+      "url": "/products/:product_id.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/products/handle/:api_handle.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/products.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/products/:product_id/price_points.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/products/:product_id/price_points.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/products/:product_id/price_points/:price_point_id.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/products/:product_id/price_points/:price_point_id.json"
+    },
+    {
+      "method": "DELETE",
+      "prefix": "",
+      "suffix": "",
+      "url": "/products/:product_id/price_points/:price_point_id.json"
+    },
+    {
+      "method": "PATCH",
+      "prefix": "",
+      "suffix": "",
+      "url": "/products/:product_id/price_points/:price_point_id/unarchive.json"
+    },
+    {
+      "method": "PATCH",
+      "prefix": "",
+      "suffix": "",
+      "url": "/products/:product_id/price_points/:price_point_id/default.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/products/:product_id/price_points/bulk.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/product_price_points/:product_price_point_id/currency_prices.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/product_price_points/:product_price_point_id/currency_prices.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/products_price_points.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscription_groups/:subscription_group_uid/proforma_invoices.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscription_groups/:subscription_group_uid/proforma_invoices.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/proforma_invoices/:proforma_invoice_uid.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/proforma_invoices.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/proforma_invoices.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/proforma_invoices/:proforma_invoice_uid/void.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/proforma_invoices/preview.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/proforma_invoices.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/proforma_invoices/preview.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/reason_codes.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/reason_codes.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/reason_codes/:reason_code_id.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/reason_codes/:reason_code_id.json"
+    },
+    {
+      "method": "DELETE",
+      "prefix": "",
+      "suffix": "",
+      "url": "/reason_codes/:reason_code_id.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/referral_codes/validate.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/sellers/:seller_id/sales_commission_settings.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/sellers/:seller_id/sales_reps.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/sellers/:seller_id/sales_reps/:sales_rep_id.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/site.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/sites/clear_data.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/chargify_js_keys.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/override.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/lookup.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/purge.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/prepaid_configurations.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/preview.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/add_coupon.json"
+    },
+    {
+      "method": "DELETE",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/remove_coupon.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/activate.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/components/:component_id.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/components.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/price_points.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/price_points/reset.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/components/:component_id/allocations.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/components/:component_id/allocations.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/allocations.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/allocations/preview.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/components/:component_id/allocations/:allocation_id.json"
+    },
+    {
+      "method": "DELETE",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/components/:component_id/allocations/:allocation_id.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/components/:component_id/usages.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/components/:component_id/usages.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/event_based_billing/subscriptions/:subscription_id/components/:component_id/activate.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/event_based_billing/subscriptions/:subscription_id/components/:component_id/deactivate.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/:subdomain/events/:api_handle.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/:subdomain/events/:api_handle/bulk.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions_components.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscription_groups/signup.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscription_groups.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscription_groups.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscription_groups/:uid.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscription_groups/:uid.json"
+    },
+    {
+      "method": "DELETE",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscription_groups/:uid.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscription_groups/lookup.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/group.json"
+    },
+    {
+      "method": "DELETE",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/group.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscription_groups/:uid/prepayments.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscription_groups/:uid/service_credits.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscription_groups/:uid/service_credit_deductions.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscription_groups/:uid/cancel.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscription_groups/:uid/delayed_cancel.json"
+    },
+    {
+      "method": "DELETE",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscription_groups/:uid/delayed_cancel.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscription_groups/:subscription_group_uid/reactivate.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/account_balances.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/prepayments.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/prepayments.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/service_credits.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/service_credit_deductions.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/prepayments/:prepayment_id/refunds.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/notes.json"
+    },
+    {
+      "method": "DELETE",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/notes.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/notes.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/notes/:note_id.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/notes/:note_id.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/migrations.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/migrations/preview.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/retry.json"
+    },
+    {
+      "method": "DELETE",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/resume.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/hold.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/hold.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/reactivate.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/delayed_cancel.json"
+    },
+    {
+      "method": "DELETE",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/delayed_cancel.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/cancel_dunning.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/renewals/preview.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/webhooks.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/webhooks/settings.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/webhooks/replay.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/endpoints.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/endpoints.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/endpoints/:endpoint_id.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/invoices/:invoice_id.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/invoices.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/invoices/:invoice_id/payments.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/invoices/:invoice_id/charges.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/invoices/:invoice_id/adjustments.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/statements/:statement_id.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/statements.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/statements.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/statements/ids.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/statements/ids.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/statements/count.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/adjustments.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/charges.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/payments.json"
+    },
+    {
+      "method": "POST",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/refunds.json"
+    },
+    {
+      "method": "PUT",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/reset_balance.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/transactions/:transaction_id.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/transactions.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/subscriptions/:subscription_id/transactions.json"
+    },
+    {
+      "method": "GET",
+      "prefix": "",
+      "suffix": "",
+      "url": "/transactions/count.json"
+    }
+  ],
+  "endpointName": "chargify"
+}

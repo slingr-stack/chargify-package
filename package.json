@@ -33,7 +33,7 @@
         {
             "name": "siteSharedKey",
             "label": "Site Shared key",
-            "description": "Your Site's 'Shared Key' is a value that only you and Chargify know. It is used to generate unguessable URLs for the pages hosted by Chargify that your customers may interact with pages like Self-Service Pages. This is used by the 'calculateSelfServiceUrl' function.",
+            "description": "Your Site's 'Shared Key' is a value that only you and Chargify know. It is used to generate unguessable URLs for the pages hosted by Chargify that your customers may interact with pages like Self-Service Pages.",
             "type": "text",
             "required": false
         },

@@ -1,3 +1,47 @@
+<table>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Last Updated</th>
+        <th>Summary</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Github package</td>
+        <td>August 10, 2023</td>
+        <td>Detailed description of the API of the Chargify package.</td>
+    </tr>
+    </tbody>
+</table>
+
+# Overview
+
+## API Overview
+The Chargify Package allows you to interact programmatically with our system from your own application. Using the Javascript API, you can interact with resources such as:
+
+- Products
+- Subscriptions
+- Customers
+
+The Chargify Package aims to adhere to Package design principles. You interact with the resources exposed through the Chargify API by accessing collection and element URIs using HTTP verbs (GET, POST, PUT, and DELETE). Chargify accepts and returns data in JSON format.
+
+## Authentication
+
+To use this package, you will require the following information provided by Chargify
+
+- [ApiKey](https://maxio-chargify.zendesk.com/hc/en-us/articles/5405281550477#api-keys-0-0)
+
+- [Subdomain](https://developers.chargify.com/docs/developer-docs/158e3be5cbdc8-sites-subdomains)
+
+- [Shared Keys](https://maxio-chargify.zendesk.com/hc/en-us/articles/5405030922765#passwords-shared-keys-0-0)
+
+
+## Chargify's documentation.
+
+- [Chargify REST API](https://developers.chargify.com/docs/api-docs)
+
+
 # Javascript API
 
 The Javascript API of the chargify endpoint has three pieces:

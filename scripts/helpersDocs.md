@@ -9,12 +9,12 @@ The Javascript API of the chargify endpoint has three pieces:
 ## HTTP requests
 You can make `GET`,`POST`,`DELETE`,`PUT`,`PATCH` requests to the [chargify API](API_URL_HERE) like this:
 ```javascript
-var response = pkg.chargify.get('/transactions/:transaction_id.json')
-var response = pkg.chargify.post('/api_exports/proforma_invoices.json', body)
-var response = pkg.chargify.post('/api_exports/proforma_invoices.json')
-var response = pkg.chargify.delete('/subscription_groups/:uid.json')
-var response = pkg.chargify.put('/:resource_type/:resource_id/metadata.json', body)
-var response = pkg.chargify.put('/:resource_type/:resource_id/metadata.json')
+var response = pkg.chargify.get('/api_exports/invoices/:batch_id.json')
+var response = pkg.chargify.post('/api_exports/subscriptions.json', body)
+var response = pkg.chargify.post('/api_exports/subscriptions.json')
+var response = pkg.chargify.delete('/product_families/:product_family_id/coupons/:coupon_id.json')
+var response = pkg.chargify.put('/subscriptions/:subscription_id/activate.json', body)
+var response = pkg.chargify.put('/subscriptions/:subscription_id/activate.json')
 var response = pkg.chargify.patch('/products/:product_id/price_points/:price_point_id/default.json', body)
 var response = pkg.chargify.patch('/products/:product_id/price_points/:price_point_id/default.json')
 ```

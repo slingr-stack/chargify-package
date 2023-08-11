@@ -53,14 +53,14 @@ The Javascript API of the chargify endpoint has three pieces:
 ## HTTP requests
 You can make `GET`,`POST`,`DELETE`,`PUT`,`PATCH` requests to the [chargify API](API_URL_HERE) like this:
 ```javascript
-var response = app.endpoints.chargify.get('/transactions/:transaction_id.json')
-var response = app.endpoints.chargify.post('/api_exports/proforma_invoices.json', body)
-var response = app.endpoints.chargify.post('/api_exports/proforma_invoices.json')
-var response = app.endpoints.chargify.delete('/subscription_groups/:uid.json')
-var response = app.endpoints.chargify.put('/:resource_type/:resource_id/metadata.json', body)
-var response = app.endpoints.chargify.put('/:resource_type/:resource_id/metadata.json')
-var response = app.endpoints.chargify.patch('/products/:product_id/price_points/:price_point_id/default.json', body)
-var response = app.endpoints.chargify.patch('/products/:product_id/price_points/:price_point_id/default.json')
+var response = pkg.chargify.get('/api_exports/invoices/:batch_id.json')
+var response = pkg.chargify.post('/api_exports/subscriptions.json', body)
+var response = pkg.chargify.post('/api_exports/subscriptions.json')
+var response = pkg.chargify.delete('/product_families/:product_family_id/coupons/:coupon_id.json')
+var response = pkg.chargify.put('/subscriptions/:subscription_id/activate.json', body)
+var response = pkg.chargify.put('/subscriptions/:subscription_id/activate.json')
+var response = pkg.chargify.patch('/products/:product_id/price_points/:price_point_id/default.json', body)
+var response = pkg.chargify.patch('/products/:product_id/price_points/:price_point_id/default.json')
 ```
 
 Please take a look at the documentation of the [HTTP endpoint](https://github.com/slingr-stack/http-endpoint#javascript-api)
@@ -77,1471 +77,1471 @@ Instead of having to use the generic HTTP methods, you can (and should) make use
 * API URL: '/api_exports/proforma_invoices/:batch_id/rows.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.apiExports.proformaInvoices.rowsJson.get(batchId)
+pkg.chargify.apiExports.proformaInvoices.rowsJson.get(batchId)
 ```
 ---
 * API URL: '/api_exports/invoices/:batch_id/rows.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.apiExports.invoices.rowsJson.get(batchId)
+pkg.chargify.apiExports.invoices.rowsJson.get(batchId)
 ```
 ---
 * API URL: '/api_exports/subscriptions/:batch_id/rows.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.apiExports.subscriptions.rowsJson.get(batchId)
+pkg.chargify.apiExports.subscriptions.rowsJson.get(batchId)
 ```
 ---
 * API URL: '/api_exports/proforma_invoices/:batch_id.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.apiExports.proformaInvoices.get(batchIdJson)
+pkg.chargify.apiExports.proformaInvoices.get(batchIdJson)
 ```
 ---
 * API URL: '/api_exports/invoices/:batch_id.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.apiExports.invoices.get(batchIdJson)
+pkg.chargify.apiExports.invoices.get(batchIdJson)
 ```
 ---
 * API URL: '/api_exports/subscriptions/:batch_id.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.apiExports.subscriptions.get(batchIdJson)
+pkg.chargify.apiExports.subscriptions.get(batchIdJson)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/advance_invoice.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.subscriptions.advanceInvoiceJson.get(subscriptionId)
+pkg.chargify.subscriptions.advanceInvoiceJson.get(subscriptionId)
 ```
 ---
 * API URL: '/portal/customers/:customer_id/management_link.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.portal.customers.managementLinkJson.get(customerId)
+pkg.chargify.portal.customers.managementLinkJson.get(customerId)
 ```
 ---
 * API URL: '/product_families/:product_family_id/coupons.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.productFamilies.couponsJson.get(productFamilyId)
+pkg.chargify.productFamilies.couponsJson.get(productFamilyId)
 ```
 ---
 * API URL: '/coupons/find.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.coupons.findJson.get()
+pkg.chargify.coupons.findJson.get()
 ```
 ---
 * API URL: '/product_families/:product_family_id/coupons/:coupon_id.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.productFamilies.coupons.get(productFamilyId, couponIdJson)
+pkg.chargify.productFamilies.coupons.get(productFamilyId, couponIdJson)
 ```
 ---
 * API URL: '/coupons.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.couponsJson.get()
+pkg.chargify.couponsJson.get()
 ```
 ---
 * API URL: '/product_families/:product_family_id/coupons/:coupon_id/usage.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.productFamilies.coupons.usageJson.get(productFamilyId, couponId)
+pkg.chargify.productFamilies.coupons.usageJson.get(productFamilyId, couponId)
 ```
 ---
 * API URL: '/coupons/validate.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.coupons.validateJson.get()
+pkg.chargify.coupons.validateJson.get()
 ```
 ---
 * API URL: '/coupons/:coupon_id/codes.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.coupons.codesJson.get(couponId)
+pkg.chargify.coupons.codesJson.get(couponId)
 ```
 ---
 * API URL: '/components/lookup.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.components.lookupJson.get()
+pkg.chargify.components.lookupJson.get()
 ```
 ---
 * API URL: '/product_families/:product_family_id/components/:component_id.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.productFamilies.components.get(productFamilyId, componentIdJson)
+pkg.chargify.productFamilies.components.get(productFamilyId, componentIdJson)
 ```
 ---
 * API URL: '/components.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.componentsJson.get()
+pkg.chargify.componentsJson.get()
 ```
 ---
 * API URL: '/product_families/:product_family_id/components.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.productFamilies.componentsJson.get(productFamilyId)
+pkg.chargify.productFamilies.componentsJson.get(productFamilyId)
 ```
 ---
 * API URL: '/components/:component_id/price_points.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.components.pricePointsJson.get(componentId)
+pkg.chargify.components.pricePointsJson.get(componentId)
 ```
 ---
 * API URL: '/components_price_points.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.componentsPricePointsJson.get()
+pkg.chargify.componentsPricePointsJson.get()
 ```
 ---
 * API URL: '/customers.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.customersJson.get()
+pkg.chargify.customersJson.get()
 ```
 ---
 * API URL: '/customers/:id.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.customers.get(idJson)
+pkg.chargify.customers.get(idJson)
 ```
 ---
 * API URL: '/customers/lookup.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.customers.lookupJson.get()
+pkg.chargify.customers.lookupJson.get()
 ```
 ---
 * API URL: '/customers/:customer_id/subscriptions.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.customers.subscriptionsJson.get(customerId)
+pkg.chargify.customers.subscriptionsJson.get(customerId)
 ```
 ---
 * API URL: '/:resource_type/metafields.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.metafieldsJson.get(resourceType)
+pkg.chargify.metafieldsJson.get(resourceType)
 ```
 ---
 * API URL: '/:resource_type/:resource_id/metadata.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.metadataJson.get(resourceType)
+pkg.chargify.metadataJson.get(resourceType)
 ```
 ---
 * API URL: '/:resource_type/metadata.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.metadataJson.get()
+pkg.chargify.metadataJson.get()
 ```
 ---
 * API URL: '/events.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.eventsJson.get()
+pkg.chargify.eventsJson.get()
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/events.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.subscriptions.eventsJson.get(subscriptionId)
+pkg.chargify.subscriptions.eventsJson.get(subscriptionId)
 ```
 ---
 * API URL: '/events/count.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.events.countJson.get()
+pkg.chargify.events.countJson.get()
 ```
 ---
 * API URL: '/components/:component_id/price_points/:price_point_id/segments.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.components.pricePoints.segmentsJson.get(componentId, pricePointId)
+pkg.chargify.components.pricePoints.segmentsJson.get(componentId, pricePointId)
 ```
 ---
 * API URL: '/stats.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.statsJson.get()
+pkg.chargify.statsJson.get()
 ```
 ---
 * API URL: '/mrr.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.mrrJson.get()
+pkg.chargify.mrrJson.get()
 ```
 ---
 * API URL: '/mrr_movements.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.mrrMovementsJson.get()
+pkg.chargify.mrrMovementsJson.get()
 ```
 ---
 * API URL: '/subscriptions_mrr.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.subscriptionsMrrJson.get()
+pkg.chargify.subscriptionsMrrJson.get()
 ```
 ---
 * API URL: '/invoices.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.invoicesJson.get()
+pkg.chargify.invoicesJson.get()
 ```
 ---
 * API URL: '/invoices.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.invoicesJson.get()
+pkg.chargify.invoicesJson.get()
 ```
 ---
 * API URL: '/invoices/:uid.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.invoices.get()
+pkg.chargify.invoices.get()
 ```
 ---
 * API URL: '/invoices/:invoice_id.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.invoices.get()
+pkg.chargify.invoices.get()
 ```
 ---
 * API URL: '/invoices/events.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.invoices.eventsJson.get()
+pkg.chargify.invoices.eventsJson.get()
 ```
 ---
 * API URL: '/credit_notes.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.creditNotesJson.get()
+pkg.chargify.creditNotesJson.get()
 ```
 ---
 * API URL: '/credit_notes/:uid.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.creditNotes.get(uidJson)
+pkg.chargify.creditNotes.get(uidJson)
 ```
 ---
 * API URL: '/invoices/:invoice_uid/segments.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.invoices.segmentsJson.get(invoiceUid)
+pkg.chargify.invoices.segmentsJson.get(invoiceUid)
 ```
 ---
 * API URL: '/offers.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.offersJson.get()
+pkg.chargify.offersJson.get()
 ```
 ---
 * API URL: '/offers/:offer_id.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.offers.get(offerIdJson)
+pkg.chargify.offers.get(offerIdJson)
 ```
 ---
 * API URL: '/payment_profiles.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.paymentProfilesJson.get()
+pkg.chargify.paymentProfilesJson.get()
 ```
 ---
 * API URL: '/payment_profiles/:payment_profile_id.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.paymentProfiles.get(paymentProfileIdJson)
+pkg.chargify.paymentProfiles.get(paymentProfileIdJson)
 ```
 ---
 * API URL: '/one_time_tokens/:chargify_token.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.oneTimeTokens.get(chargifyTokenJson)
+pkg.chargify.oneTimeTokens.get(chargifyTokenJson)
 ```
 ---
 * API URL: '/product_families/:product_family_id/products.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.productFamilies.productsJson.get(productFamilyId)
+pkg.chargify.productFamilies.productsJson.get(productFamilyId)
 ```
 ---
 * API URL: '/product_families.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.productFamiliesJson.get()
+pkg.chargify.productFamiliesJson.get()
 ```
 ---
 * API URL: '/product_families/:id.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.productFamilies.get(idJson)
+pkg.chargify.productFamilies.get(idJson)
 ```
 ---
 * API URL: '/products/:product_id.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.products.get(productIdJson)
+pkg.chargify.products.get(productIdJson)
 ```
 ---
 * API URL: '/products/handle/:api_handle.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.products.handle.get(apiHandleJson)
+pkg.chargify.products.handle.get(apiHandleJson)
 ```
 ---
 * API URL: '/products.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.productsJson.get()
+pkg.chargify.productsJson.get()
 ```
 ---
 * API URL: '/products/:product_id/price_points.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.products.pricePointsJson.get(productId)
+pkg.chargify.products.pricePointsJson.get(productId)
 ```
 ---
 * API URL: '/products/:product_id/price_points/:price_point_id.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.products.pricePoints.get(productId, pricePointIdJson)
+pkg.chargify.products.pricePoints.get(productId, pricePointIdJson)
 ```
 ---
 * API URL: '/products_price_points.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.productsPricePointsJson.get()
+pkg.chargify.productsPricePointsJson.get()
 ```
 ---
 * API URL: '/subscription_groups/:subscription_group_uid/proforma_invoices.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.subscriptionGroups.proformaInvoicesJson.get(subscriptionGroupUid)
+pkg.chargify.subscriptionGroups.proformaInvoicesJson.get(subscriptionGroupUid)
 ```
 ---
 * API URL: '/proforma_invoices/:proforma_invoice_uid.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.proformaInvoices.get(proformaInvoiceUidJson)
+pkg.chargify.proformaInvoices.get(proformaInvoiceUidJson)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/proforma_invoices.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.subscriptions.proformaInvoicesJson.get(subscriptionId)
+pkg.chargify.subscriptions.proformaInvoicesJson.get(subscriptionId)
 ```
 ---
 * API URL: '/reason_codes.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.reasonCodesJson.get()
+pkg.chargify.reasonCodesJson.get()
 ```
 ---
 * API URL: '/reason_codes/:reason_code_id.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.reasonCodes.get(reasonCodeIdJson)
+pkg.chargify.reasonCodes.get(reasonCodeIdJson)
 ```
 ---
 * API URL: '/referral_codes/validate.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.referralCodes.validateJson.get()
+pkg.chargify.referralCodes.validateJson.get()
 ```
 ---
 * API URL: '/sellers/:seller_id/sales_commission_settings.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.sellers.salesCommissionSettingsJson.get(sellerId)
+pkg.chargify.sellers.salesCommissionSettingsJson.get(sellerId)
 ```
 ---
 * API URL: '/sellers/:seller_id/sales_reps.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.sellers.salesRepsJson.get(sellerId)
+pkg.chargify.sellers.salesRepsJson.get(sellerId)
 ```
 ---
 * API URL: '/sellers/:seller_id/sales_reps/:sales_rep_id.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.sellers.salesReps.get(sellerId, salesRepIdJson)
+pkg.chargify.sellers.salesReps.get(sellerId, salesRepIdJson)
 ```
 ---
 * API URL: '/site.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.siteJson.get()
+pkg.chargify.siteJson.get()
 ```
 ---
 * API URL: '/chargify_js_keys.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.chargifyJsKeysJson.get()
+pkg.chargify.chargifyJsKeysJson.get()
 ```
 ---
 * API URL: '/subscriptions.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.subscriptionsJson.get()
+pkg.chargify.subscriptionsJson.get()
 ```
 ---
 * API URL: '/subscriptions/:subscription_id.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.subscriptions.get(subscriptionIdJson)
+pkg.chargify.subscriptions.get(subscriptionIdJson)
 ```
 ---
 * API URL: '/subscriptions/lookup.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.subscriptions.lookupJson.get()
+pkg.chargify.subscriptions.lookupJson.get()
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/components/:component_id.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.subscriptions.components.get(subscriptionId, componentIdJson)
+pkg.chargify.subscriptions.components.get(subscriptionId, componentIdJson)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/components.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.subscriptions.componentsJson.get(subscriptionId)
+pkg.chargify.subscriptions.componentsJson.get(subscriptionId)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/components/:component_id/allocations.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.subscriptions.components.allocationsJson.get(subscriptionId, componentId)
+pkg.chargify.subscriptions.components.allocationsJson.get(subscriptionId, componentId)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/components/:component_id/usages.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.subscriptions.components.usagesJson.get(subscriptionId, componentId)
+pkg.chargify.subscriptions.components.usagesJson.get(subscriptionId, componentId)
 ```
 ---
 * API URL: '/subscriptions_components.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.subscriptionsComponentsJson.get()
+pkg.chargify.subscriptionsComponentsJson.get()
 ```
 ---
 * API URL: '/subscription_groups.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.subscriptionGroupsJson.get()
+pkg.chargify.subscriptionGroupsJson.get()
 ```
 ---
 * API URL: '/subscription_groups/:uid.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.subscriptionGroups.get(uidJson)
+pkg.chargify.subscriptionGroups.get(uidJson)
 ```
 ---
 * API URL: '/subscription_groups/lookup.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.subscriptionGroups.lookupJson.get()
+pkg.chargify.subscriptionGroups.lookupJson.get()
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/account_balances.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.subscriptions.accountBalancesJson.get(subscriptionId)
+pkg.chargify.subscriptions.accountBalancesJson.get(subscriptionId)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/prepayments.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.subscriptions.prepaymentsJson.get(subscriptionId)
+pkg.chargify.subscriptions.prepaymentsJson.get(subscriptionId)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/notes.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.subscriptions.notesJson.get(subscriptionId)
+pkg.chargify.subscriptions.notesJson.get(subscriptionId)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/notes/:note_id.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.subscriptions.notes.get(subscriptionId, noteIdJson)
+pkg.chargify.subscriptions.notes.get(subscriptionId, noteIdJson)
 ```
 ---
 * API URL: '/webhooks.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.webhooksJson.get()
+pkg.chargify.webhooksJson.get()
 ```
 ---
 * API URL: '/endpoints.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.endpointsJson.get()
+pkg.chargify.endpointsJson.get()
 ```
 ---
 * API URL: '/statements/:statement_id.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.statements.get(statementIdJson)
+pkg.chargify.statements.get(statementIdJson)
 ```
 ---
 * API URL: '/statements.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.statementsJson.get()
+pkg.chargify.statementsJson.get()
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/statements.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.subscriptions.statementsJson.get(subscriptionId)
+pkg.chargify.subscriptions.statementsJson.get(subscriptionId)
 ```
 ---
 * API URL: '/statements/ids.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.statements.idsJson.get()
+pkg.chargify.statements.idsJson.get()
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/statements/ids.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.subscriptions.statements.idsJson.get(subscriptionId)
+pkg.chargify.subscriptions.statements.idsJson.get(subscriptionId)
 ```
 ---
 * API URL: '/statements/count.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.statements.countJson.get()
+pkg.chargify.statements.countJson.get()
 ```
 ---
 * API URL: '/transactions/:transaction_id.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.transactions.get(transactionIdJson)
+pkg.chargify.transactions.get(transactionIdJson)
 ```
 ---
 * API URL: '/transactions.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.transactionsJson.get()
+pkg.chargify.transactionsJson.get()
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/transactions.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.subscriptions.transactionsJson.get(subscriptionId)
+pkg.chargify.subscriptions.transactionsJson.get(subscriptionId)
 ```
 ---
 * API URL: '/transactions/count.json'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.chargify.transactions.countJson.get()
+pkg.chargify.transactions.countJson.get()
 ```
 ---
 * API URL: '/api_exports/proforma_invoices.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.apiExports.proformaInvoicesJson.post(body)
+pkg.chargify.apiExports.proformaInvoicesJson.post(body)
 ```
 ---
 * API URL: '/api_exports/invoices.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.apiExports.invoicesJson.post(body)
+pkg.chargify.apiExports.invoicesJson.post(body)
 ```
 ---
 * API URL: '/api_exports/subscriptions.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.apiExports.subscriptionsJson.post(body)
+pkg.chargify.apiExports.subscriptionsJson.post(body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/advance_invoice/issue.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.advanceInvoice.issueJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.advanceInvoice.issueJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/advance_invoice/void.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.advanceInvoice.voidJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.advanceInvoice.voidJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/portal/customers/:customer_id/enable.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.portal.customers.enableJson.post(customerId, body)
+pkg.chargify.portal.customers.enableJson.post(customerId, body)
 ```
 ---
 * API URL: '/portal/customers/:customer_id/invitations/invite.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.portal.customers.invitations.inviteJson.post(customerId, body)
+pkg.chargify.portal.customers.invitations.inviteJson.post(customerId, body)
 ```
 ---
 * API URL: '/product_families/:product_family_id/coupons.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.productFamilies.couponsJson.post(productFamilyId, body)
+pkg.chargify.productFamilies.couponsJson.post(productFamilyId, body)
 ```
 ---
 * API URL: '/coupons/:coupon_id/codes.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.coupons.codesJson.post(couponId, body)
+pkg.chargify.coupons.codesJson.post(couponId, body)
 ```
 ---
 * API URL: '/product_families/:product_family_id/:plural_kind.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.productFamilies.post(productFamilyId, pluralKindJson, body)
+pkg.chargify.productFamilies.post(productFamilyId, pluralKindJson, body)
 ```
 ---
 * API URL: '/components/:component_id/price_points.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.components.pricePointsJson.post(componentId, body)
+pkg.chargify.components.pricePointsJson.post(componentId, body)
 ```
 ---
 * API URL: '/components/:component_id/price_points/bulk.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.components.pricePoints.bulkJson.post(componentId, body)
+pkg.chargify.components.pricePoints.bulkJson.post(componentId, body)
 ```
 ---
 * API URL: '/price_points/:price_point_id/currency_prices.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.pricePoints.currencyPricesJson.post(pricePointId, body)
+pkg.chargify.pricePoints.currencyPricesJson.post(pricePointId, body)
 ```
 ---
 * API URL: '/customers.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.customersJson.post(body)
+pkg.chargify.customersJson.post(body)
 ```
 ---
 * API URL: '/:resource_type/metafields.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.metafieldsJson.post(resourceType, body)
+pkg.chargify.metafieldsJson.post(resourceType, body)
 ```
 ---
 * API URL: '/:resource_type/:resource_id/metadata.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.metadataJson.post(resourceType, resourceId, body)
+pkg.chargify.metadataJson.post(resourceType, resourceId, body)
 ```
 ---
 * API URL: '/components/:component_id/price_points/:price_point_id/segments.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.components.pricePoints.segmentsJson.post(componentId, pricePointId, body)
+pkg.chargify.components.pricePoints.segmentsJson.post(componentId, pricePointId, body)
 ```
 ---
 * API URL: '/components/:component_id/price_points/:price_point_id/segments/bulk.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.components.pricePoints.segments.bulkJson.post(componentId, pricePointId, body)
+pkg.chargify.components.pricePoints.segments.bulkJson.post(componentId, pricePointId, body)
 ```
 ---
 * API URL: '/invoices/:uid/refunds.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.invoices.refundsJson.post(uid, body)
+pkg.chargify.invoices.refundsJson.post(uid, body)
 ```
 ---
 * API URL: '/invoices/:uid/payments.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.invoices.paymentsJson.post(body)
+pkg.chargify.invoices.paymentsJson.post(body)
 ```
 ---
 * API URL: '/invoices/payments.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.invoices.paymentsJson.post(body)
+pkg.chargify.invoices.paymentsJson.post(body)
 ```
 ---
 * API URL: '/invoices/:invoice_id/payments.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.invoices.paymentsJson.post(body)
+pkg.chargify.invoices.paymentsJson.post(body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/payments.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.paymentsJson.post(body)
+pkg.chargify.subscriptions.paymentsJson.post(body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/payments.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.paymentsJson.post(body)
+pkg.chargify.subscriptions.paymentsJson.post(body)
 ```
 ---
 * API URL: '/invoices/:uid/reopen.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.invoices.reopenJson.post(uid, body)
+pkg.chargify.invoices.reopenJson.post(uid, body)
 ```
 ---
 * API URL: '/invoices/:uid/void.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.invoices.voidJson.post(uid, body)
+pkg.chargify.invoices.voidJson.post(uid, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/invoices.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.invoicesJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.invoicesJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/invoices/:uid/deliveries.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.invoices.deliveriesJson.post(uid, body)
+pkg.chargify.invoices.deliveriesJson.post(uid, body)
 ```
 ---
 * API URL: '/invoices/:uid/customer_information/preview.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.invoices.customerInformation.previewJson.post(uid, body)
+pkg.chargify.invoices.customerInformation.previewJson.post(uid, body)
 ```
 ---
 * API URL: '/invoices/:uid/issue.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.invoices.issueJson.post(uid, body)
+pkg.chargify.invoices.issueJson.post(uid, body)
 ```
 ---
 * API URL: '/offers.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.offersJson.post(body)
+pkg.chargify.offersJson.post(body)
 ```
 ---
 * API URL: '/payment_profiles.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.paymentProfilesJson.post(body)
+pkg.chargify.paymentProfilesJson.post(body)
 ```
 ---
 * API URL: '/subscriptions/:id/payment_profiles/:payment_profile_id/change_payment_profile.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.paymentProfiles.changePaymentProfileJson.post(id, paymentProfileId, body)
+pkg.chargify.subscriptions.paymentProfiles.changePaymentProfileJson.post(id, paymentProfileId, body)
 ```
 ---
 * API URL: '/subscription_groups/:uid/payment_profiles/:payment_profile_id/change_payment_profile.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptionGroups.paymentProfiles.changePaymentProfileJson.post(uid, paymentProfileId, body)
+pkg.chargify.subscriptionGroups.paymentProfiles.changePaymentProfileJson.post(uid, paymentProfileId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/request_payment_profiles_update.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.requestPaymentProfilesUpdateJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.requestPaymentProfilesUpdateJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/product_families.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.productFamiliesJson.post(body)
+pkg.chargify.productFamiliesJson.post(body)
 ```
 ---
 * API URL: '/product_families/:product_family_id/products.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.productFamilies.productsJson.post(productFamilyId, body)
+pkg.chargify.productFamilies.productsJson.post(productFamilyId, body)
 ```
 ---
 * API URL: '/products/:product_id/price_points.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.products.pricePointsJson.post(productId, body)
+pkg.chargify.products.pricePointsJson.post(productId, body)
 ```
 ---
 * API URL: '/products/:product_id/price_points/bulk.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.products.pricePoints.bulkJson.post(productId, body)
+pkg.chargify.products.pricePoints.bulkJson.post(productId, body)
 ```
 ---
 * API URL: '/product_price_points/:product_price_point_id/currency_prices.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.productPricePoints.currencyPricesJson.post(productPricePointId, body)
+pkg.chargify.productPricePoints.currencyPricesJson.post(productPricePointId, body)
 ```
 ---
 * API URL: '/subscription_groups/:subscription_group_uid/proforma_invoices.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptionGroups.proformaInvoicesJson.post(subscriptionGroupUid, body)
+pkg.chargify.subscriptionGroups.proformaInvoicesJson.post(subscriptionGroupUid, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/proforma_invoices.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.proformaInvoicesJson.post(body)
+pkg.chargify.subscriptions.proformaInvoicesJson.post(body)
 ```
 ---
 * API URL: '/subscriptions/proforma_invoices.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.proformaInvoicesJson.post(body)
+pkg.chargify.subscriptions.proformaInvoicesJson.post(body)
 ```
 ---
 * API URL: '/proforma_invoices/:proforma_invoice_uid/void.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.proformaInvoices.voidJson.post(proformaInvoiceUid, body)
+pkg.chargify.proformaInvoices.voidJson.post(proformaInvoiceUid, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/proforma_invoices/preview.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.proformaInvoices.previewJson.post(body)
+pkg.chargify.subscriptions.proformaInvoices.previewJson.post(body)
 ```
 ---
 * API URL: '/subscriptions/proforma_invoices/preview.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.proformaInvoices.previewJson.post(body)
+pkg.chargify.subscriptions.proformaInvoices.previewJson.post(body)
 ```
 ---
 * API URL: '/reason_codes.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.reasonCodesJson.post(body)
+pkg.chargify.reasonCodesJson.post(body)
 ```
 ---
 * API URL: '/sites/clear_data.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.sites.clearDataJson.post(body)
+pkg.chargify.sites.clearDataJson.post(body)
 ```
 ---
 * API URL: '/subscriptions.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptionsJson.post(body)
+pkg.chargify.subscriptionsJson.post(body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/purge.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.purgeJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.purgeJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/prepaid_configurations.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.prepaidConfigurationsJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.prepaidConfigurationsJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/subscriptions/preview.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.previewJson.post(body)
+pkg.chargify.subscriptions.previewJson.post(body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/add_coupon.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.addCouponJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.addCouponJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/price_points.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.pricePointsJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.pricePointsJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/price_points/reset.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.pricePoints.resetJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.pricePoints.resetJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/components/:component_id/allocations.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.components.allocationsJson.post(subscriptionId, componentId, body)
+pkg.chargify.subscriptions.components.allocationsJson.post(subscriptionId, componentId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/allocations.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.allocationsJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.allocationsJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/allocations/preview.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.allocations.previewJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.allocations.previewJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/components/:component_id/usages.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.components.usagesJson.post(subscriptionId, componentId, body)
+pkg.chargify.subscriptions.components.usagesJson.post(subscriptionId, componentId, body)
 ```
 ---
 * API URL: '/event_based_billing/subscriptions/:subscription_id/components/:component_id/activate.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.eventBasedBilling.subscriptions.components.activateJson.post(subscriptionId, componentId, body)
+pkg.chargify.eventBasedBilling.subscriptions.components.activateJson.post(subscriptionId, componentId, body)
 ```
 ---
 * API URL: '/event_based_billing/subscriptions/:subscription_id/components/:component_id/deactivate.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.eventBasedBilling.subscriptions.components.deactivateJson.post(subscriptionId, componentId, body)
+pkg.chargify.eventBasedBilling.subscriptions.components.deactivateJson.post(subscriptionId, componentId, body)
 ```
 ---
 * API URL: '/:subdomain/events/:api_handle.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.events.post(subdomain, apiHandleJson, body)
+pkg.chargify.events.post(subdomain, apiHandleJson, body)
 ```
 ---
 * API URL: '/:subdomain/events/:api_handle/bulk.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.events.bulkJson.post(subdomain, apiHandle, body)
+pkg.chargify.events.bulkJson.post(subdomain, apiHandle, body)
 ```
 ---
 * API URL: '/subscription_groups/signup.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptionGroups.signupJson.post(body)
+pkg.chargify.subscriptionGroups.signupJson.post(body)
 ```
 ---
 * API URL: '/subscription_groups.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptionGroupsJson.post(body)
+pkg.chargify.subscriptionGroupsJson.post(body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/group.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.groupJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.groupJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/subscription_groups/:uid/prepayments.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptionGroups.prepaymentsJson.post(uid, body)
+pkg.chargify.subscriptionGroups.prepaymentsJson.post(uid, body)
 ```
 ---
 * API URL: '/subscription_groups/:uid/service_credits.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptionGroups.serviceCreditsJson.post(uid, body)
+pkg.chargify.subscriptionGroups.serviceCreditsJson.post(uid, body)
 ```
 ---
 * API URL: '/subscription_groups/:uid/service_credit_deductions.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptionGroups.serviceCreditDeductionsJson.post(uid, body)
+pkg.chargify.subscriptionGroups.serviceCreditDeductionsJson.post(uid, body)
 ```
 ---
 * API URL: '/subscription_groups/:uid/cancel.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptionGroups.cancelJson.post(uid, body)
+pkg.chargify.subscriptionGroups.cancelJson.post(uid, body)
 ```
 ---
 * API URL: '/subscription_groups/:uid/delayed_cancel.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptionGroups.delayedCancelJson.post(uid, body)
+pkg.chargify.subscriptionGroups.delayedCancelJson.post(uid, body)
 ```
 ---
 * API URL: '/subscription_groups/:subscription_group_uid/reactivate.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptionGroups.reactivateJson.post(subscriptionGroupUid, body)
+pkg.chargify.subscriptionGroups.reactivateJson.post(subscriptionGroupUid, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/prepayments.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.prepaymentsJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.prepaymentsJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/service_credits.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.serviceCreditsJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.serviceCreditsJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/service_credit_deductions.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.serviceCreditDeductionsJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.serviceCreditDeductionsJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/prepayments/:prepayment_id/refunds.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.prepayments.refundsJson.post(subscriptionId, prepaymentId, body)
+pkg.chargify.subscriptions.prepayments.refundsJson.post(subscriptionId, prepaymentId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/notes.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.notesJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.notesJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/migrations.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.migrationsJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.migrationsJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/migrations/preview.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.migrations.previewJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.migrations.previewJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/resume.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.resumeJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.resumeJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/hold.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.holdJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.holdJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/delayed_cancel.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.delayedCancelJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.delayedCancelJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/cancel_dunning.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.cancelDunningJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.cancelDunningJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/renewals/preview.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.renewals.previewJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.renewals.previewJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/webhooks/replay.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.webhooks.replayJson.post(body)
+pkg.chargify.webhooks.replayJson.post(body)
 ```
 ---
 * API URL: '/endpoints.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.endpointsJson.post(body)
+pkg.chargify.endpointsJson.post(body)
 ```
 ---
 * API URL: '/invoices/:invoice_id/charges.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.invoices.chargesJson.post(invoiceId, body)
+pkg.chargify.invoices.chargesJson.post(invoiceId, body)
 ```
 ---
 * API URL: '/invoices/:invoice_id/adjustments.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.invoices.adjustmentsJson.post(invoiceId, body)
+pkg.chargify.invoices.adjustmentsJson.post(invoiceId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/adjustments.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.adjustmentsJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.adjustmentsJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/charges.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.chargesJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.chargesJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/refunds.json'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.chargify.subscriptions.refundsJson.post(subscriptionId, body)
+pkg.chargify.subscriptions.refundsJson.post(subscriptionId, body)
 ```
 ---
 * API URL: '/portal/customers/:customer_id/invitations/revoke.json'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.chargify.portal.customers.invitations.revokeJson.delete(customerId)
+pkg.chargify.portal.customers.invitations.revokeJson.delete(customerId)
 ```
 ---
 * API URL: '/product_families/:product_family_id/coupons/:coupon_id.json'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.chargify.productFamilies.coupons.delete(productFamilyId, couponIdJson)
+pkg.chargify.productFamilies.coupons.delete(productFamilyId, couponIdJson)
 ```
 ---
 * API URL: '/coupons/:coupon_id/codes/:subcode.json'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.chargify.coupons.codes.delete(couponId, subcodeJson)
+pkg.chargify.coupons.codes.delete(couponId, subcodeJson)
 ```
 ---
 * API URL: '/product_families/:product_family_id/components/:component_id.json'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.chargify.productFamilies.components.delete(productFamilyId, componentIdJson)
+pkg.chargify.productFamilies.components.delete(productFamilyId, componentIdJson)
 ```
 ---
 * API URL: '/components/:component_id/price_points/:price_point_id.json'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.chargify.components.pricePoints.delete(componentId, pricePointIdJson)
+pkg.chargify.components.pricePoints.delete(componentId, pricePointIdJson)
 ```
 ---
 * API URL: '/customers/:id.json'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.chargify.customers.delete(idJson)
+pkg.chargify.customers.delete(idJson)
 ```
 ---
 * API URL: '/:resource_type/metafields.json'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.chargify.metafieldsJson.delete(resourceType)
+pkg.chargify.metafieldsJson.delete(resourceType)
 ```
 ---
 * API URL: '/:resource_type/:resource_id/metadata.json'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.chargify.metadataJson.delete(resourceType, resourceId)
+pkg.chargify.metadataJson.delete(resourceType, resourceId)
 ```
 ---
 * API URL: '/components/:component_id/price_points/:price_point_id/segments/:id.json'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.chargify.components.pricePoints.segments.delete(componentId, pricePointId, idJson)
+pkg.chargify.components.pricePoints.segments.delete(componentId, pricePointId, idJson)
 ```
 ---
 * API URL: '/payment_profiles/:payment_profile_id.json'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.chargify.paymentProfiles.delete(paymentProfileIdJson)
+pkg.chargify.paymentProfiles.delete(paymentProfileIdJson)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/payment_profiles/:payment_profile_id.json'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.chargify.subscriptions.paymentProfiles.delete(subscriptionId, paymentProfileIdJson)
+pkg.chargify.subscriptions.paymentProfiles.delete(subscriptionId, paymentProfileIdJson)
 ```
 ---
 * API URL: '/subscription_groups/:subscription_group_uid/payment_profiles/:payment_profile_id.json'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.chargify.subscriptionGroups.paymentProfiles.delete(subscriptionGroupUid, paymentProfileIdJson)
+pkg.chargify.subscriptionGroups.paymentProfiles.delete(subscriptionGroupUid, paymentProfileIdJson)
 ```
 ---
 * API URL: '/products/:product_id.json'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.chargify.products.delete(productIdJson)
+pkg.chargify.products.delete(productIdJson)
 ```
 ---
 * API URL: '/products/:product_id/price_points/:price_point_id.json'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.chargify.products.pricePoints.delete(productId, pricePointIdJson)
+pkg.chargify.products.pricePoints.delete(productId, pricePointIdJson)
 ```
 ---
 * API URL: '/reason_codes/:reason_code_id.json'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.chargify.reasonCodes.delete(reasonCodeIdJson)
+pkg.chargify.reasonCodes.delete(reasonCodeIdJson)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/remove_coupon.json'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.chargify.subscriptions.removeCouponJson.delete(subscriptionId)
+pkg.chargify.subscriptions.removeCouponJson.delete(subscriptionId)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/components/:component_id/allocations/:allocation_id.json'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.chargify.subscriptions.components.allocations.delete(subscriptionId, componentId, allocationIdJson)
+pkg.chargify.subscriptions.components.allocations.delete(subscriptionId, componentId, allocationIdJson)
 ```
 ---
 * API URL: '/subscription_groups/:uid.json'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.chargify.subscriptionGroups.delete(uidJson)
+pkg.chargify.subscriptionGroups.delete(uidJson)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/group.json'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.chargify.subscriptions.groupJson.delete(subscriptionId)
+pkg.chargify.subscriptions.groupJson.delete(subscriptionId)
 ```
 ---
 * API URL: '/subscription_groups/:uid/delayed_cancel.json'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.chargify.subscriptionGroups.delayedCancelJson.delete(uid)
+pkg.chargify.subscriptionGroups.delayedCancelJson.delete(uid)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/notes.json'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.chargify.subscriptions.notesJson.delete(subscriptionId)
+pkg.chargify.subscriptions.notesJson.delete(subscriptionId)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id.json'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.chargify.subscriptions.delete(subscriptionIdJson)
+pkg.chargify.subscriptions.delete(subscriptionIdJson)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/delayed_cancel.json'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.chargify.subscriptions.delayedCancelJson.delete(subscriptionId)
+pkg.chargify.subscriptions.delayedCancelJson.delete(subscriptionId)
 ```
 ---
 * API URL: '/product_families/:product_family_id/coupons/:coupon_id.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.productFamilies.coupons.put(productFamilyId, couponIdJson, body)
+pkg.chargify.productFamilies.coupons.put(productFamilyId, couponIdJson, body)
 ```
 ---
 * API URL: '/coupon/:coupon_id/currency_prices.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.coupon.currencyPricesJson.put(couponId, body)
+pkg.chargify.coupon.currencyPricesJson.put(couponId, body)
 ```
 ---
 * API URL: '/coupons/:coupon_id/codes.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.coupons.codesJson.put(couponId, body)
+pkg.chargify.coupons.codesJson.put(couponId, body)
 ```
 ---
 * API URL: '/components/:component_id/price_points/:price_point_id/default.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.components.pricePoints.defaultJson.put(componentId, pricePointId, body)
+pkg.chargify.components.pricePoints.defaultJson.put(componentId, pricePointId, body)
 ```
 ---
 * API URL: '/components/:component_id/price_points/:price_point_id.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.components.pricePoints.put(componentId, pricePointIdJson, body)
+pkg.chargify.components.pricePoints.put(componentId, pricePointIdJson, body)
 ```
 ---
 * API URL: '/components/:component_id/price_points/:price_point_id/unarchive.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.components.pricePoints.unarchiveJson.put(componentId, pricePointId, body)
+pkg.chargify.components.pricePoints.unarchiveJson.put(componentId, pricePointId, body)
 ```
 ---
 * API URL: '/price_points/:price_point_id/currency_prices.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.pricePoints.currencyPricesJson.put(pricePointId, body)
+pkg.chargify.pricePoints.currencyPricesJson.put(pricePointId, body)
 ```
 ---
 * API URL: '/customers/:id.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.customers.put(idJson, body)
+pkg.chargify.customers.put(idJson, body)
 ```
 ---
 * API URL: '/:resource_type/metafields.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.metafieldsJson.put(resourceType, body)
+pkg.chargify.metafieldsJson.put(resourceType, body)
 ```
 ---
 * API URL: '/:resource_type/:resource_id/metadata.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.metadataJson.put(resourceType, resourceId, body)
+pkg.chargify.metadataJson.put(resourceType, resourceId, body)
 ```
 ---
 * API URL: '/components/:component_id/price_points/:price_point_id/segments/:id.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.components.pricePoints.segments.put(componentId, pricePointId, idJson, body)
+pkg.chargify.components.pricePoints.segments.put(componentId, pricePointId, idJson, body)
 ```
 ---
 * API URL: '/components/:component_id/price_points/:price_point_id/segments/bulk.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.components.pricePoints.segments.bulkJson.put(componentId, pricePointId, body)
+pkg.chargify.components.pricePoints.segments.bulkJson.put(componentId, pricePointId, body)
 ```
 ---
 * API URL: '/invoices/:uid/customer_information.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.invoices.customerInformationJson.put(uid, body)
+pkg.chargify.invoices.customerInformationJson.put(uid, body)
 ```
 ---
 * API URL: '/offers/:offer_id/archive.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.offers.archiveJson.put(offerId, body)
+pkg.chargify.offers.archiveJson.put(offerId, body)
 ```
 ---
 * API URL: '/offers/:offer_id/unarchive.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.offers.unarchiveJson.put(offerId, body)
+pkg.chargify.offers.unarchiveJson.put(offerId, body)
 ```
 ---
 * API URL: '/payment_profiles/:payment_profile_id.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.paymentProfiles.put(paymentProfileIdJson, body)
+pkg.chargify.paymentProfiles.put(paymentProfileIdJson, body)
 ```
 ---
 * API URL: '/bank_accounts/:bank_account_id/verification.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.bankAccounts.verificationJson.put(bankAccountId, body)
+pkg.chargify.bankAccounts.verificationJson.put(bankAccountId, body)
 ```
 ---
 * API URL: '/products/:product_id.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.products.put(productIdJson, body)
+pkg.chargify.products.put(productIdJson, body)
 ```
 ---
 * API URL: '/products/:product_id/price_points/:price_point_id.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.products.pricePoints.put(productId, pricePointIdJson, body)
+pkg.chargify.products.pricePoints.put(productId, pricePointIdJson, body)
 ```
 ---
 * API URL: '/product_price_points/:product_price_point_id/currency_prices.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.productPricePoints.currencyPricesJson.put(productPricePointId, body)
+pkg.chargify.productPricePoints.currencyPricesJson.put(productPricePointId, body)
 ```
 ---
 * API URL: '/reason_codes/:reason_code_id.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.reasonCodes.put(reasonCodeIdJson, body)
+pkg.chargify.reasonCodes.put(reasonCodeIdJson, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.subscriptions.put(subscriptionIdJson, body)
+pkg.chargify.subscriptions.put(subscriptionIdJson, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/override.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.subscriptions.overrideJson.put(subscriptionId, body)
+pkg.chargify.subscriptions.overrideJson.put(subscriptionId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/activate.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.subscriptions.activateJson.put(subscriptionId, body)
+pkg.chargify.subscriptions.activateJson.put(subscriptionId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/components/:component_id/allocations/:allocation_id.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.subscriptions.components.allocations.put(subscriptionId, componentId, allocationIdJson, body)
+pkg.chargify.subscriptions.components.allocations.put(subscriptionId, componentId, allocationIdJson, body)
 ```
 ---
 * API URL: '/subscription_groups/:uid.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.subscriptionGroups.put(uidJson, body)
+pkg.chargify.subscriptionGroups.put(uidJson, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/notes/:note_id.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.subscriptions.notes.put(subscriptionId, noteIdJson, body)
+pkg.chargify.subscriptions.notes.put(subscriptionId, noteIdJson, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/retry.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.subscriptions.retryJson.put(subscriptionId, body)
+pkg.chargify.subscriptions.retryJson.put(subscriptionId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/hold.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.subscriptions.holdJson.put(subscriptionId, body)
+pkg.chargify.subscriptions.holdJson.put(subscriptionId, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/reactivate.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.subscriptions.reactivateJson.put(subscriptionId, body)
+pkg.chargify.subscriptions.reactivateJson.put(subscriptionId, body)
 ```
 ---
 * API URL: '/webhooks/settings.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.webhooks.settingsJson.put(body)
+pkg.chargify.webhooks.settingsJson.put(body)
 ```
 ---
 * API URL: '/endpoints/:endpoint_id.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.endpoints.put(endpointIdJson, body)
+pkg.chargify.endpoints.put(endpointIdJson, body)
 ```
 ---
 * API URL: '/subscriptions/:subscription_id/reset_balance.json'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.chargify.subscriptions.resetBalanceJson.put(subscriptionId, body)
+pkg.chargify.subscriptions.resetBalanceJson.put(subscriptionId, body)
 ```
 ---
 * API URL: '/products/:product_id/price_points/:price_point_id/unarchive.json'
 * HTTP Method: 'PATCH'
 ```javascript
-app.endpoints.chargify.products.pricePoints.unarchiveJson.patch(productId, pricePointId, body)
+pkg.chargify.products.pricePoints.unarchiveJson.patch(productId, pricePointId, body)
 ```
 ---
 * API URL: '/products/:product_id/price_points/:price_point_id/default.json'
 * HTTP Method: 'PATCH'
 ```javascript
-app.endpoints.chargify.products.pricePoints.defaultJson.patch(productId, pricePointId, body)
+pkg.chargify.products.pricePoints.defaultJson.patch(productId, pricePointId, body)
 ```
 ---
 

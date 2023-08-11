@@ -2,7 +2,7 @@
  Listeners
  ****************************************************/
 
-listeners.defaultWebhook = {
+listeners.defaultWebhookChargify = {
     label: 'Catch HTTP chargify events',
     type: 'service',
     options: {

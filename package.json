@@ -73,6 +73,11 @@
             "type": "listener",
             "namespace": "webhook",
             "path": "/listeners/listeners.js"
+        },
+        {
+            "type": "flowStep",
+            "namespace": "steps",
+            "path": "/flowSteps/apiCallChargify"
         }
     ]
 }

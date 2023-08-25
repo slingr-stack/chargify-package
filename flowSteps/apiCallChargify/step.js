@@ -4,6 +4,22 @@
 
 var httpService = dependencies.http;
 
+/**
+ * This flow step will send generic request.
+ *
+ * @param {object} inputs
+ * {text} method, This is used to config method.
+ * {text} url, This is used to config external URL.
+ * {Array[string]} pathVariables, This is used to config path variables.
+ * {Array[string]} headers, This is used to config headers.
+ * {Array[string]} params, This is used to config params.
+ * {string} body, This is used to send body request.
+ * {boolean} followRedirects, This is used to config follow redirects.
+ * {boolean} download, This is used to config download.
+ * {boolean} fullResponse, This is used to config full response.
+ * {number} connectionTimeout, Read timeout interval, in milliseconds.
+ * {number} readTimeout, Connect timeout interval, in milliseconds.
+ */
 step.apiCallChargify = function (inputs) {
 
 	var inputsLogic = {
@@ -26,17 +42,17 @@ step.apiCallChargify = function (inputs) {
 	inputsLogic.headers = isObject(inputsLogic.headers) ? inputsLogic.headers : stringToObject(inputsLogic.headers);
 	inputsLogic.params = isObject(inputsLogic.params) ? inputsLogic.params : stringToObject(inputsLogic.params);
 	inputsLogic.body = isObject(inputsLogic.body) ? inputsLogic.body : JSON.parse(inputsLogic.body);
-
+	
 	var options = {
 		url: config.get("subdomainLabel") + parse(inputsLogic.url.urlValue, inputsLogic.url.paramsValue),
 		params: inputsLogic.params,
 		headers: inputsLogic.headers,
 		body: inputsLogic.body,
-		followRedirects: inputsLogic.followRedirects,
-		forceDownload: inputsLogic.download,
-		downloadSync: false,
+		followRedirects : inputsLogic.followRedirects,
+		forceDownload :inputsLogic.download,
+		downloadSync : false,
 		fileName: inputsLogic.fileName,
-		fullResponse: inputsLogic.fullResponse,
+		fullResponse : inputsLogic.fullResponse,
 		connectionTimeout: inputsLogic.connectionTimeout,
 		readTimeout: inputsLogic.readTimeout
 	}
@@ -69,20 +85,20 @@ step.apiCallChargify = function (inputs) {
 	return null;
 };
 
-var parse = function (url, pathVariables) {
+var parse = function (url, pathVariables){
 
 	var regex = /{([^}]*)}/g;
 
-	if (!url.match(regex)) {
+	if (!url.match(regex)){
 		return url;
 	}
 
-	if (!pathVariables) {
+	if(!pathVariables){
 		sys.logs.error('No path variables have been received and the url contains curly brackets\'{}\'');
 		throw new Error('Error please contact support.');
 	}
 
-	url = url.replace(regex, function (m, i) {
+	url = url.replace(regex, function(m, i) {
 		return pathVariables[i] ? pathVariables[i] : m;
 	})
 
@@ -96,10 +112,10 @@ var isObject = function (obj) {
 var stringType = Function.prototype.call.bind(Object.prototype.toString);
 
 var stringToObject = function (obj) {
-	if (!!obj) {
+	if (!!obj){
 		var keyValue = obj.toString().split(',');
 		var parseObj = {};
-		for (var i = 0; i < keyValue.length; i++) {
+		for(var i = 0; i < keyValue.length; i++) {
 			parseObj[keyValue[i].split('=')[0]] = keyValue[i].split('=')[1]
 		}
 		return parseObj;

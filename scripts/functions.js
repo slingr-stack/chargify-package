@@ -2,7 +2,36 @@
  Dependencies
  ****************************************************/
 
-var httpService = dependencies.http;
+var httpReference = dependencies.http;
+
+var httpDependency = {
+    get: httpReference.get,
+    post: httpReference.post,
+    put: httpReference.put,
+    patch: httpReference.patch,
+    delete: httpReference.delete,
+    head: httpReference.head,
+    options: httpReference.options
+};
+var httpService = {};
+
+function handleRequestWithRetry(requestFn, options, callbackData, callbacks) {
+    try {
+        return requestFn(options, callbackData, callbacks);
+    } catch (error) {
+        sys.logs.info("[chargify] Handling request "+JSON.stringify(error));
+    }
+}
+
+function createWrapperFunction(requestFn) {
+    return function(options, callbackData, callbacks) {
+        return handleRequestWithRetry(requestFn, options, callbackData, callbacks);
+    };
+}
+
+for (var key in httpDependency) {
+    if (typeof httpDependency[key] === 'function') httpService[key] = createWrapperFunction(httpDependency[key]);
+}
 
 /****************************************************
  Helpers
@@ -1022,18 +1051,18 @@ exports.metadataJson.get = function(resourceType, resourceId, httpOptions) {
     var url;
     switch(httpOptions ? arguments.length - 1 : arguments.length){
         case 2:
-            url = parse('/:resource_type/:resource_id/metadata.json', [resourceType, resourceId]);
-            break;
-        case 1:
-            url = parse('/:resource_type/metadata.json', [resourceType]);
-            break;
-        default:
+			url = parse('/:resource_type/:resource_id/metadata.json', [resourceType, resourceId]);
+			break;
+		case 1:
+			url = parse('/:resource_type/metadata.json', [resourceType]);
+			break;
+		default:
             sys.logs.error('Invalid argument received.');
             return;
     }
     sys.logs.debug('[chargify] GET from: ' + url);
-    var options = checkHttpOptions(url, httpOptions);
-    return httpService.get(Chargify(options));
+	var options = checkHttpOptions(url, httpOptions);
+	return httpService.get(Chargify(options));
 };
 
 exports.metadataJson.put = function(resourceType, resourceId, httpOptions) {
@@ -1200,18 +1229,18 @@ exports.invoicesJson.get = function(httpOptions) {
     var url;
     switch(httpOptions ? arguments.length - 1 : arguments.length){
         case 0:
-            url = parse('/invoices.json');
-            break;
-        case 0:
-            url = parse('/invoices.json');
-            break;
-        default:
+			url = parse('/invoices.json');
+			break;
+		case 0:
+			url = parse('/invoices.json');
+			break;
+		default:
             sys.logs.error('Invalid argument received.');
             return;
     }
     sys.logs.debug('[chargify] GET from: ' + url);
-    var options = checkHttpOptions(url, httpOptions);
-    return httpService.get(Chargify(options));
+	var options = checkHttpOptions(url, httpOptions);
+	return httpService.get(Chargify(options));
 };
 
 exports.invoices.get = function(invoiceIdJson, httpOptions) {
@@ -1226,18 +1255,18 @@ exports.invoices.get = function(invoiceIdJson, httpOptions) {
     var url;
     switch(httpOptions ? arguments.length - 1 : arguments.length){
         case 1:
-            url = parse('/invoices/:uid.json', [uidJson]);
-            break;
-        case 1:
-            url = parse('/invoices/:invoice_id.json', [invoiceIdJson]);
-            break;
-        default:
+			url = parse('/invoices/:uid.json', [uidJson]);
+			break;
+		case 1:
+			url = parse('/invoices/:invoice_id.json', [invoiceIdJson]);
+			break;
+		default:
             sys.logs.error('Invalid argument received.');
             return;
     }
     sys.logs.debug('[chargify] GET from: ' + url);
-    var options = checkHttpOptions(url, httpOptions);
-    return httpService.get(Chargify(options));
+	var options = checkHttpOptions(url, httpOptions);
+	return httpService.get(Chargify(options));
 };
 
 exports.invoices.eventsJson.get = function(httpOptions) {
@@ -1263,21 +1292,21 @@ exports.invoices.paymentsJson.post = function(invoiceId, httpOptions) {
     var url;
     switch(arguments.length - 1){
         case 1:
-            url = parse('/invoices/:uid/payments.json', [uid]);
-            break;
-        case 0:
-            url = parse('/invoices/payments.json');
-            break;
-        case 1:
-            url = parse('/invoices/:invoice_id/payments.json', [invoiceId]);
-            break;
-        default:
+			url = parse('/invoices/:uid/payments.json', [uid]);
+			break;
+		case 0:
+			url = parse('/invoices/payments.json');
+			break;
+		case 1:
+			url = parse('/invoices/:invoice_id/payments.json', [invoiceId]);
+			break;
+		default:
             sys.logs.error('Invalid argument received.');
             return;
     }
     sys.logs.debug('[chargify] POST from: ' + url);
-    var options = checkHttpOptions(url, httpOptions);
-    return httpService.post(Chargify(options));
+	var options = checkHttpOptions(url, httpOptions);
+	return httpService.post(Chargify(options));
 };
 
 exports.creditNotesJson.get = function(httpOptions) {
@@ -1314,18 +1343,18 @@ exports.subscriptions.paymentsJson.post = function(subscriptionId, httpOptions) 
     var url;
     switch(arguments.length - 1){
         case 1:
-            url = parse('/subscriptions/:subscription_id/payments.json', [subscriptionId]);
-            break;
-        case 1:
-            url = parse('/subscriptions/:subscription_id/payments.json', [subscriptionId]);
-            break;
-        default:
+			url = parse('/subscriptions/:subscription_id/payments.json', [subscriptionId]);
+			break;
+		case 1:
+			url = parse('/subscriptions/:subscription_id/payments.json', [subscriptionId]);
+			break;
+		default:
             sys.logs.error('Invalid argument received.');
             return;
     }
     sys.logs.debug('[chargify] POST from: ' + url);
-    var options = checkHttpOptions(url, httpOptions);
-    return httpService.post(Chargify(options));
+	var options = checkHttpOptions(url, httpOptions);
+	return httpService.post(Chargify(options));
 };
 
 exports.invoices.reopenJson.post = function(uid, httpOptions) {
@@ -1851,18 +1880,18 @@ exports.subscriptions.proformaInvoicesJson.post = function(subscriptionId, httpO
     var url;
     switch(arguments.length - 1){
         case 1:
-            url = parse('/subscriptions/:subscription_id/proforma_invoices.json', [subscriptionId]);
-            break;
-        case 0:
-            url = parse('/subscriptions/proforma_invoices.json');
-            break;
-        default:
+			url = parse('/subscriptions/:subscription_id/proforma_invoices.json', [subscriptionId]);
+			break;
+		case 0:
+			url = parse('/subscriptions/proforma_invoices.json');
+			break;
+		default:
             sys.logs.error('Invalid argument received.');
             return;
     }
     sys.logs.debug('[chargify] POST from: ' + url);
-    var options = checkHttpOptions(url, httpOptions);
-    return httpService.post(Chargify(options));
+	var options = checkHttpOptions(url, httpOptions);
+	return httpService.post(Chargify(options));
 };
 
 exports.subscriptions.proformaInvoicesJson.get = function(subscriptionId, httpOptions) {
@@ -1903,18 +1932,18 @@ exports.subscriptions.proformaInvoices.previewJson.post = function(subscriptionI
     var url;
     switch(arguments.length - 1){
         case 1:
-            url = parse('/subscriptions/:subscription_id/proforma_invoices/preview.json', [subscriptionId]);
-            break;
-        case 0:
-            url = parse('/subscriptions/proforma_invoices/preview.json');
-            break;
-        default:
+			url = parse('/subscriptions/:subscription_id/proforma_invoices/preview.json', [subscriptionId]);
+			break;
+		case 0:
+			url = parse('/subscriptions/proforma_invoices/preview.json');
+			break;
+		default:
             sys.logs.error('Invalid argument received.');
             return;
     }
     sys.logs.debug('[chargify] POST from: ' + url);
-    var options = checkHttpOptions(url, httpOptions);
-    return httpService.post(Chargify(options));
+	var options = checkHttpOptions(url, httpOptions);
+	return httpService.post(Chargify(options));
 };
 
 exports.reasonCodesJson.post = function(httpOptions) {
@@ -3028,6 +3057,12 @@ exports.utils.fromMillisToDate = function(params) {
     return null;
 };
 
+exports.utils.getConfiguration = function (property) {
+    sys.logs.debug('[chargify] Get property: '+property);
+    return config.get(property);
+};
+
+
 /****************************************************
  Private helpers
  ****************************************************/
@@ -3044,7 +3079,7 @@ var checkHttpOptions = function (url, options) {
             options = url || {};
         } else {
             if (!!options.path || !!options.params || !!options.body) {
-                // options contains the http package format
+                // options contain the http package format
                 options.path = url;
             } else {
                 // create html package
@@ -3069,7 +3104,7 @@ var parse = function (str) {
         if (arguments.length > 1) {
             var args = arguments[1], i = 0;
             return str.replace(/(:(?:\w|-)+)/g, () => {
-                if (typeof (args[i]) != 'string') throw new Error('Invalid type of argument: [' + args[i] + '] for url [' + str + '].');
+                if (typeof (args[i]) != 'string' && typeof (args[i]) != 'number') throw new Error('Invalid type of argument: [' + args[i] + '] for url [' + str + '].');
                 return args[i++];
             });
         } else {
@@ -3085,19 +3120,13 @@ var parse = function (str) {
 }
 
 /****************************************************
- Constants
- ****************************************************/
-
-var API_URL = config.get("subdomainLabel"); // TODO: Set the base url for the api
-
-/****************************************************
  Configurator
  ****************************************************/
 
 var Chargify = function (options) {
     options = options || {};
-    options = setApiUri(options);
-    options = setRequestHeaders(options);
+    options= setApiUri(options);
+    options= setRequestHeaders(options);
     options = setAuthorization(options);
     return options;
 }
@@ -3107,6 +3136,7 @@ var Chargify = function (options) {
  ****************************************************/
 
 function setApiUri(options) {
+    var API_URL = config.get("subdomainLabel");
     var url = options.path || "";
     options.url = API_URL + url;
     sys.logs.debug('[chargify] Set url: ' + options.path + "->" + options.url);
@@ -3132,7 +3162,6 @@ function setAuthorization(options) {
     options.authorization = authorization;
     return options;
 }
-
 
 function mergeJSON (json1, json2) {
     const result = {};

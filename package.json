@@ -5,7 +5,7 @@
         {
             "type": "service",
             "name": "http",
-            "version": "v1.1.5",
+            "version": "v1.2.6",
             "instanceId": "shared"
         }
     ],
@@ -68,11 +68,6 @@
             "type": "script",
             "namespace": "api",
             "path": "/scripts/functions.js"
-        },
-        {
-            "type": "listener",
-            "namespace": "webhook",
-            "path": "/listeners/listeners.js"
         },
         {
             "type": "flowStep",

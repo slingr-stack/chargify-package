@@ -17,6 +17,7 @@ let httpDependency = {
 let httpService = {}
 
 /**
+ * 
  * Handles a request with retry from the platform side.
  */
 function handleRequestWithRetry(requestFn, options, callbackData, callbacks) {

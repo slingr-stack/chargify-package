@@ -120,7 +120,7 @@ function setApiUri(options) {
 }
 function setAuthorization(options) {
 	var authorization = options.authorization || {};
-	sys.logs.debug('[sharepoint] setting authorization');
+	sys.logs.debug('[chargify] setting authorization');
 
 	authorization = mergeJSON(authorization, {
 		type: "basic",

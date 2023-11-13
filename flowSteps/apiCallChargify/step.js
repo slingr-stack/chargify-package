@@ -32,12 +32,15 @@ step.apiCallChargify = function (inputs) {
 		fullResponse: inputs.fullResponse || false,
 		connectionTimeout: inputs.connectionTimeout || 5000,
 		readTimeout: inputs.readTimeout || 60000,
-		path: inputs.path || "",
+		path: inputs.path || {
+			urlValue: "",
+			paramsValue: []
+		},
 		method: inputs.method || "get"
 	};
 
 	var options = {
-		path: inputsLogic.path,
+		path: parse(inputsLogic.path.urlValue, inputsLogic.path.paramsValue),
 		params: isObject(inputsLogic.params) ? inputsLogic.params : stringToObject(inputsLogic.params),
 		headers: isObject(inputsLogic.headers) ? inputsLogic.headers : stringToObject(inputsLogic.headers),
 		body: isObject(inputsLogic.body) ? inputsLogic.body : JSON.parse(inputsLogic.body),
@@ -73,6 +76,21 @@ step.apiCallChargify = function (inputs) {
 
 	return null;
 };
+
+function parse (url, pathVariables){
+	var regex = /{([^}]*)}/g;
+	if (!url.match(regex)){
+		return url;
+	}
+	if(!pathVariables){
+		sys.logs.error('No path variables have been received and the url contains curly brackets\'{}\'');
+		throw new Error('Error please contact support.');
+	}
+	url = url.replace(regex, function(m, i) {
+		return pathVariables[i] ? pathVariables[i] : m;
+	})
+	return url;
+}
 
 function isObject (obj) {
 	return !!obj && stringType(obj) === '[object Object]'

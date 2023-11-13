@@ -9,8 +9,10 @@
 			"name": "method",
 			"description": "The method to which this service will send the request.",
 			"type": "dropDown",
+			"multiplicity": "one",
 			"required": "true",
-			"typeOptions": {
+			"defaultValue": "get",
+			"options": {
 				"possibleValues": [
 					{
 						"label": "GET",
@@ -40,14 +42,15 @@
 						"label": "HEAD",
 						"name": "head"
 					}
-				]
+				],
+				"allowContextSelector": "false"
 			}
 		},
         {
             "label": "Path",
             "name": "path",
             "description": "The URL to which this service will send the request.",
-            "type": "text",
+            "type": "urlParams",
             "required": "true"
         },
         {

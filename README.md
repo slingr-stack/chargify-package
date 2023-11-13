@@ -49,14 +49,14 @@ The Javascript API of the chargify package has two pieces:
 ## HTTP requests
 You can make `GET`,`POST`,`DELETE`,`PUT`,`PATCH` requests to the [chargify API](https://developers.chargify.com/docs/api-docs/7b6ea12f39549-maxio-advanced-billing-formerly-chargify-api) like this:
 ```javascript
-var response = pkg.chargify.functions.get('/components_price_points.json')
-var response = pkg.chargify.functions.post('/:subdomain/events/:api_handle/bulk.json', body)
-var response = pkg.chargify.functions.post('/:subdomain/events/:api_handle/bulk.json')
-var response = pkg.chargify.functions.delete('/portal/customers/:customer_id/invitations/revoke.json')
-var response = pkg.chargify.functions.put('/subscriptions/:subscription_id/reset_balance.json', body)
-var response = pkg.chargify.functions.put('/subscriptions/:subscription_id/reset_balance.json')
-var response = pkg.chargify.functions.patch('/products/:product_id/price_points/:price_point_id/unarchive.json', body)
-var response = pkg.chargify.functions.patch('/products/:product_id/price_points/:price_point_id/unarchive.json')
+var response = pkg.chargify.api.get('/components_price_points.json')
+var response = pkg.chargify.api.post('/:subdomain/events/:api_handle/bulk.json', body)
+var response = pkg.chargify.api.post('/:subdomain/events/:api_handle/bulk.json')
+var response = pkg.chargify.api.delete('/portal/customers/:customer_id/invitations/revoke.json')
+var response = pkg.chargify.api.put('/subscriptions/:subscription_id/reset_balance.json', body)
+var response = pkg.chargify.api.put('/subscriptions/:subscription_id/reset_balance.json')
+var response = pkg.chargify.api.patch('/products/:product_id/price_points/:price_point_id/unarchive.json', body)
+var response = pkg.chargify.api.patch('/products/:product_id/price_points/:price_point_id/unarchive.json')
 ```
 
 Please take a look at the documentation of the [HTTP service](https://github.com/slingr-stack/http-service)

@@ -53,9 +53,9 @@ step.apiCallChargify = function (inputs) {
 		readTimeout: inputsLogic.readTimeout
 	};
 
-	setApiUri(options)
-	setRequestHeaders(options);
-	setAuthorization(options);
+	options= setApiUri(options)
+	options= setRequestHeaders(options);
+	options= setAuthorization(options);
 
 	switch (inputsLogic.method.toLowerCase()) {
 		case 'get':

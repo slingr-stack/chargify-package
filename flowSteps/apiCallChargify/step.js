@@ -2,7 +2,7 @@
  Dependencies
  ****************************************************/
 
-var httpService = dependencies.http;
+let httpService = dependencies.http;
 
 /**
  * This flow step will send generic request.
@@ -78,13 +78,13 @@ function isObject (obj) {
 	return !!obj && stringType(obj) === '[object Object]'
 }
 
-var stringType = Function.prototype.call.bind(Object.prototype.toString);
+let stringType = Function.prototype.call.bind(Object.prototype.toString);
 
 function stringToObject (obj) {
 	if (!!obj){
-		var keyValue = obj.toString().split(',');
-		var parseObj = {};
-		for(var i = 0; i < keyValue.length; i++) {
+		let keyValue = obj.toString().split(',');
+		let parseObj = {};
+		for(let i = 0; i < keyValue.length; i++) {
 			parseObj[keyValue[i].split('=')[0]] = keyValue[i].split('=')[1]
 		}
 		return parseObj;
@@ -101,7 +101,7 @@ function setApiUri(options) {
 	return options;
 }
 function setAuthorization(options) {
-	var authorization = options.authorization || {};
+	let authorization = options.authorization || {};
 	sys.logs.debug('[sharepoint] setting authorization');
 
 	authorization = mergeJSON(authorization, {
@@ -122,7 +122,7 @@ function setRequestHeaders(options) {
 
 function mergeJSON (json1, json2) {
 	const result = {};
-	var key;
+	let key;
 	for (key in json1) {
 		if(json1.hasOwnProperty(key)) result[key] = json1[key];
 	}

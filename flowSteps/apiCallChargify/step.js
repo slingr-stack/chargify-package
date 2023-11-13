@@ -2,7 +2,7 @@
  Dependencies
  ****************************************************/
 
-let httpService = dependencies.http;
+var httpService = dependencies.http;
 
 /**
  * This flow step will send generic request.
@@ -78,13 +78,13 @@ function isObject (obj) {
 	return !!obj && stringType(obj) === '[object Object]'
 }
 
-let stringType = Function.prototype.call.bind(Object.prototype.toString);
+var stringType = Function.prototype.call.bind(Object.prototype.toString);
 
 function stringToObject (obj) {
 	if (!!obj){
-		let keyValue = obj.toString().split(',');
-		let parseObj = {};
-		for(let i = 0; i < keyValue.length; i++) {
+		var keyValue = obj.toString().split(',');
+		var parseObj = {};
+		for(var i = 0; i < keyValue.length; i++) {
 			parseObj[keyValue[i].split('=')[0]] = keyValue[i].split('=')[1]
 		}
 		return parseObj;
@@ -94,14 +94,14 @@ function stringToObject (obj) {
 
 
 function setApiUri(options) {
-	let API_URL = config.get("subdomainLabel");
-	let url = options.path || "";
+	var API_URL = config.get("subdomainLabel");
+	var url = options.path || "";
 	options.url = API_URL + url;
 	sys.logs.debug('[chargify] Set url: ' + options.path + "->" + options.url);
 	return options;
 }
 function setAuthorization(options) {
-	let authorization = options.authorization || {};
+	var authorization = options.authorization || {};
 	sys.logs.debug('[sharepoint] setting authorization');
 
 	authorization = mergeJSON(authorization, {
@@ -114,15 +114,15 @@ function setAuthorization(options) {
 }
 
 function setRequestHeaders(options) {
-	let headers = options.headers || {};
+	var headers = options.headers || {};
 	headers = mergeJSON(headers, {"Content-Type": "application/json"});
 	options.headers = headers;
 	return options;
 }
 
 function mergeJSON (json1, json2) {
-	const result = {};
-	let key;
+	var result = {};
+	var key;
 	for (key in json1) {
 		if(json1.hasOwnProperty(key)) result[key] = json1[key];
 	}
